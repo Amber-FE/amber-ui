@@ -1,0 +1,63 @@
+@import '../variables.scss';
+
+.amber-radio-container {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 8px;
+}
+
+.amber-radio-icon {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid $border-color-default;
+  border-radius: 100%;
+
+  &:hover {
+    border: 1px solid $border-color-hover;
+  }
+
+  &:after {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    content: '';
+    border-radius: 100%;
+    width: 5px;
+    height: 5px;
+    background-color: #fff;
+  }
+}
+
+.amber-radio-checked {
+  border-color: var(--color-primary);
+  &:after {
+    transform:  translate(-50%,-50%) scale(1);
+  }
+}
+
+.amber-radio-un-checked {
+  &:after {
+    transform:  translate(-50%,-50%) scale(0);
+  }
+}
+
+.amber-radio-label {
+  margin-left: 5px;
+  cursor: pointer;
+
+  &--disabled {
+    color: var(--color-disabled);
+  }
+}
+
+.amber-radio-icon--disabled {
+  border-color: var(--color-disabled);
+  pointer-events: none;
+  &:after {
+    background-color: var(--color-disabled);
+  }
+}

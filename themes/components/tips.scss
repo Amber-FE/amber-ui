@@ -1,0 +1,22 @@
+.amber-tips-container {
+  height: 48px;
+  background: #FFF5ED;
+  border-radius: 2px;
+  border: 1px solid var(--color-warning);
+  line-height: 48px;
+  padding: 0 16px;
+  margin-bottom: 16px;
+
+  &-wrapper {
+    // .p-size(50px, 50px, 16px, left, 30px, #ed2f26);
+    // display: inline-block;
+    font-size: 14px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #323233;
+
+    &--color {
+      color: var(--color-warning);
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.amber-ps-container {
+  width: 100%;
+  &-list {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    // transition: all 0.3s;
+
+    li {
+      list-style: none;
+      float: left;
+      // transition: all 0.3s;
+    }
+  }
+}

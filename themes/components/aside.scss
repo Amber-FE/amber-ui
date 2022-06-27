@@ -1,0 +1,5 @@
+.amber-aside-container {
+  box-sizing: border-box;
+  flex-shrink: 0; //空间不足时不缩小
+  overflow: auto;
+}

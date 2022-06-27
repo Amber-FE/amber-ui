@@ -1,0 +1,58 @@
+@import '../variables.scss';
+
+.amber-switch-container {
+	position: relative;
+	display: inline-block;
+	
+	&-item {
+		position: relative;
+		
+		&.amber-switch-size--default {
+			.switch {
+				width: 42px;
+				height: 22px;
+			}
+		}
+		
+		&.amber-switch-size--small {
+			.switch {
+				width: 26px;
+				height: 14px;
+			}
+		}
+		
+		.switch {
+			position: relative;
+			background-color: rgba(0,0,0,.25);
+			border-radius: 30px;
+			border: none;
+			outline: none;
+			-webkit-appearance: none;
+			transition: all .2s ease;
+			
+			&::after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 50%;
+				height: 100%;
+				background-color: #fff;
+				border-radius: 50%;
+				transition: all .2s ease;
+			}
+			
+			&:checked {
+				background-color: $primary-color;
+				
+				&::after {
+					left: 50%;
+				}
+			}
+			
+			&.disabled {
+				opacity: .5;
+			}
+		}
+	}
+}

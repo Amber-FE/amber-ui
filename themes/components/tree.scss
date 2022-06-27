@@ -1,0 +1,28 @@
+.amber-tree {
+  // height: 100px;
+  width: 100vh;
+  color: #606266;
+
+  &-box {}
+
+  &-firstManu {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &-firstManu :hover {
+    background: #F5F7FA;
+
+  }
+
+  &-seconedManu {
+    width: 100%;
+    padding-left: 32px; // 缩进量
+  }
+
+  .amber-open-node {}
+
+  .amber-close-node {
+    display: none;
+  }
+}

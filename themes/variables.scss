@@ -1,0 +1,50 @@
+// ---- 色彩 ----
+// 主色调
+$primary-color: var(--color-primary) !default;
+$primary-color-end: var(--color-primary-end) !default;
+
+// 警告
+$warning-color: var(--color-warning) !default;
+
+// 危险
+$danger-color :var(--color-danger) !default;
+
+// ---- Disabled ----
+$disabled-color: var(--color-disabled) !default;
+
+// 文本颜色
+$text-color: var(--color-text) !default;
+
+// 按钮
+$button-default-color: $text-color !default;
+$button-default-bg-color:  #FFFFFF !default;
+$button-default-border-color: #DCDEE0 !default;
+
+$button-primary-color: #FFFFFF !default;
+$button-primary-bg-color: $primary-color !default;
+$button-primary-border-color: $primary-color !default;
+
+$button-warning-color: #FEFEFE !default;
+$button-warning-bg-color: $warning-color !default;
+$button-warning-border-color: $warning-color !default;
+
+$button-danger-color: #FEFEFE !default;
+$button-danger-bg-color: $danger-color !default;
+$button-danger-border-color: $danger-color !default;
+
+// Disabled
+$button-disable-color: $disabled-color !default;
+
+$button-text-color: #FFFFFF !default;
+$button-text-bg-color: #FFFFFF !default;
+
+// border
+$border-color-default: var(--color-border) !default;
+$border-color-hover: $primary-color !default;
+$border-color-shadow: var(--color-shadow) !default;
+
+:export {
+  primary_color: var(--color-primary);
+  warning_color: var(--color-warning);
+  danger_color: var(--color-danger);
+}

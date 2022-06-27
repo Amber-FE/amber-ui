@@ -1,0 +1,78 @@
+@import '../variables.scss';
+@mixin jiantou {
+  position: absolute;
+  z-index: 1;
+  font-size: 13px;
+
+}
+.amber-input-number-container{
+  border-radius: 4px;
+  position: relative;
+  width: 180px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  text-align: center;
+  display: inline-block;
+
+  &--large{
+    height: 40px;
+    width: 250px;
+  }
+  &--default{
+    height: 32px;
+  }
+  &--small{
+    height: 24px;
+  }
+  span{
+    background: #f5f7fa;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    user-select: none;
+  }
+  &[disabled] {
+    cursor: not-allowed;
+    color: $button-disable-color;
+  }
+  &-decrease{
+    @include jiantou;
+    top: 0;
+    left:1px;
+    border-right: 1px solid #ccc;
+    .left{
+      &[disabled] {
+        cursor: not-allowed !important;
+        color: $button-disable-color;
+      }
+    }
+
+  }
+  &-increase{
+    @include jiantou;
+    top: 0;
+    right: 1px;
+    border-left: 1px solid #ccc;
+    .right{
+      height: 38px;
+      &[disabled] {
+        cursor: not-allowed !important;
+        color: $button-disable-color;
+      }
+    }
+  }
+  .amber-input-container{
+    .amber-input{
+      text-align: center;
+      padding-left: 50px;
+      padding-right: 50px;
+      font-size: 16px;
+      border: 0;
+      cursor: pointer;
+      &[disabled] {
+        cursor: not-allowed;
+        color: $button-disable-color;
+      }
+  }
+}
+}

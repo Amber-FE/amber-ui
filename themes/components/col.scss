@@ -1,0 +1,85 @@
+@import '../variables.scss';
+
+.amber-col {
+	position: relative;
+	display: block;
+	color: #fff;
+	text-align: center;
+	box-sizing: border-box;
+	
+	@for $i from 1 through 24 {
+		&.amber-col-xs-#{$i} {
+			flex: 0 0 (1 / 24 * $i * 100) * 1%;
+			max-width: (1 / 24 * $i * 100) * 1%;
+		}
+	}
+	
+	@media (min-width:576px) {
+		@for $i from 1 through 24 {
+			&.amber-col-sm-#{$i} {
+				flex: 0 0 (1 / 24 * $i * 100) * 1%;
+				max-width: (1 / 24 * $i * 100) * 1%;
+			}
+		}
+	}
+	
+	@media (min-width:768px) {
+		@for $i from 1 through 24 {
+			&.amber-col-md-#{$i} {
+				flex: 0 0 (1 / 24 * $i * 100) * 1%;
+				max-width: (1 / 24 * $i * 100) * 1%;
+			}
+		}
+	}
+	
+	@media (min-width:992px) {
+		@for $i from 1 through 24 {
+			&.amber-col-lg-#{$i} {
+				flex: 0 0 (1 / 24 * $i * 100) * 1%;
+				max-width: (1 / 24 * $i * 100) * 1%;
+			}
+		}
+	}
+	
+	@media (min-width:1200px) {
+		@for $i from 1 through 24 {
+			&.amber-col-xl-#{$i} {
+				flex: 0 0 (1 / 24 * $i * 100) * 1%;
+				max-width: (1 / 24 * $i * 100) * 1%;
+			}
+		}
+	}
+
+	&.amber-col-0 {
+		display: none;
+	}
+	
+	@for $i from 1 through 24 {
+		&.amber-col-#{$i} {
+			flex: 0 0 (1 / 24 * $i * 100) * 1%;
+			max-width: (1 / 24 * $i * 100) * 1%;
+		}
+		
+		&.amber-col-offset-#{$i} {
+			margin-left: (1 / 24 * $i * 100) * 1%;
+		}
+	}
+	
+	&.gutter-row:nth-child(odd) {
+		background: transparent;
+		
+		.gutter-box {
+			background: $primary-color;
+			padding: 5px 0;
+		}
+	}
+	
+	&.gutter-row:nth-child(even) {
+		background: transparent;
+		
+		.gutter-box {
+			background: $primary-color-end;
+			padding: 5px 0;
+		}
+	}
+}

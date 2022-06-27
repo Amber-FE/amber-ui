@@ -1,0 +1,90 @@
+{
+  "name": "amber-ui",
+  "version": "0.3.6",
+  "description": "PC电商展示组件库",
+  "main": "dist/index.umd.js",
+  "keywords": [
+    "amber-ui",
+    "vue",
+    "ui"
+  ],
+  "author": "lqi",
+  "files": [
+    "dist",
+    "components"
+  ],
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "build": "npm run build:js && npm run build:css",
+    "build:js": "webpack --config ./webpack.components.js",
+    "build:css": "npx gulp sass",
+    "lint": "vue-cli-service lint",
+    "eslint-fix": "eslint packages/**/*.{js,vue} --fix",
+    "prepare": "husky install",
+    "test": "mochapack --webpack-config webpack.components.js --require test/setup.js test/**/*.spec.js"
+  },
+  "lint-staged": {
+    "*.{vue,js,ts}": "eslint --fix"
+  },
+  "dependencies": {
+    "async-validator": "^4.1.1",
+    "core-js": "^3.6.5",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.49.0",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.3.0",
+    "@commitlint/config-conventional": "^16.2.4",
+    "@typescript-eslint/eslint-plugin": "^5.23.0",
+    "@typescript-eslint/parser": "^5.23.0",
+    "@vue/cli-plugin-babel": "^4.5.0",
+    "@vue/cli-plugin-eslint": "^4.5.0",
+    "@vue/cli-service": "^4.5.0",
+    "@vue/test-utils": "^1.1.0",
+    "babel-eslint": "^10.1.0",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^6.3.0",
+    "eslint": "^8.15.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-define-config": "^1.4.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.7.1",
+    "expect": "^27.5.1",
+    "gulp": "^4.0.2",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-sass": "^5.1.0",
+    "husky": "^8.0.1",
+    "jsdom": "^19.0.0",
+    "jsdom-global": "^3.0.2",
+    "lint-staged": "^12.4.1",
+    "mocha": "^9.2.0",
+    "mochapack": "^2.1.4",
+    "node-sass": "^7.0.1",
+    "prettier": "^2.6.2",
+    "prettier-eslint": "^14.0.3",
+    "sass": "^1.49.8",
+    "sass-loader": "^5.0.1",
+    "style-loader": "^3.3.1",
+    "vue-loader": "^15.9.8",
+    "vue-template-compiler": "^2.6.11",
+    "vuepress": "^1.9.7",
+    "vuepress-plugin-demo-container": "^0.2.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie<10"
+  ],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    }
+  }
+}

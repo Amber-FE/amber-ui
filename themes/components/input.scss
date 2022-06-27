@@ -1,0 +1,254 @@
+@import '../variables.scss';
+
+.amber-input-container {
+	box-sizing: border-box;
+	margin: 0;
+	list-style: none;
+	position: relative;
+	width: 100%;
+	font-size: 14px;
+	
+	.amber-input-default {
+		position: relative;
+		
+		.amber-clear-box {
+			position: relative;
+			flex: 1;
+			
+			.amber-clear-button {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				right: 12px;
+				z-index: 9;
+				opacity: .5;
+				
+				&:hover {
+					opacity: 1;
+				}
+			} 
+		}
+	}
+	
+	.amber-input {
+		box-sizing: border-box;
+		position: relative;
+		display: inline-block;
+		height: 32px;
+		width: 100%;
+		padding: 4px 11px;
+		color: rgba(0,0,0,.65);
+		line-height: 1.5;
+		background-color: #fff;
+		background-image: none;
+		border: 1px solid $border-color-default;
+		border-radius: 4px;
+		transition: all .3s;
+		outline: none;
+		
+		&::placeholder {
+			color: var(--color-border);
+		}
+		
+		&:focus,&:hover {
+			border-color: var(--color-primary);
+		}
+	}
+	
+	.amber-textarea-box {
+		position: relative;
+		
+		.amber-textarea {
+			position: relative;
+			width: 100%;
+			outline: none;
+			background-color: #fff;
+			background-image: none;
+			border: 1px solid $border-color-default;
+			box-sizing: border-box;
+			padding: 6px 11px 6px 12px;
+			
+			&::placeholder {
+				color: var(--color-border);
+			}
+			
+			&:focus,&:hover {
+				border-color: var(--color-primary);
+			}
+		}
+		
+		.amber-clear-button {
+			position: absolute;
+			top: 2px;
+			right: 6px;
+			z-index: 9;
+			opacity: .5;
+			
+			&:hover {
+				opacity: 1;
+			}
+		} 
+	}
+	
+	
+}
+
+.amber-input-affix-before {
+	.amber-input {
+		&:not(:first-child) {
+			padding-left: 30px;
+		}
+	}
+	
+	.amber-input-prefix {
+		position: absolute;
+		left: 12px;
+		top: 50%;
+		line-height: 0;
+		z-index: 2;
+		color: rgba(0,0,0,.65);
+		transform: translateY(-50%);
+		display: flex;
+		align-items: center;
+	}
+}
+
+.amber-input-affix-after {
+	
+	.amber-clear-button {
+		right: 36px !important;
+	} 
+	
+	.amber-input {
+		&:not(:last-child) {
+			padding-right: 30px;
+		}
+	}
+	
+	.amber-input-suffix {
+		position: absolute;
+		right: 12px;
+		top: 50%;
+		line-height: 0;
+		z-index: 2;
+		color: rgba(0,0,0,.65);
+		transform: translateY(-50%);
+		display: flex;
+		align-items: center;
+	}
+}
+
+.amber-input-addon-before {
+	display: flex;
+	align-items: center;
+	
+	.amber-input {
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+	
+	.amber-input-addonBefore {
+		display: flex;
+		align-items: center;
+		height: 32px;
+		background-color: #fafafa;
+		border: 1px solid $border-color-default;
+		border-right: none;
+		box-sizing: border-box;
+		padding: 0 11px;
+		border-top-left-radius: 4px;
+		border-bottom-left-radius: 4px;
+	}
+}
+
+.amber-input-addon-after {
+	display: flex;
+	align-items: center;
+	
+	.amber-input {
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+	
+	.amber-input-addonAfter {
+		display: flex;
+		align-items: center;
+		height: 32px;
+		background-color: #fafafa;
+		border: 1px solid $border-color-default;
+		border-left: none;
+		box-sizing: border-box;
+		padding: 0 11px;
+		border-top-right-radius: 4px;
+		border-bottom-right-radius: 4px;
+	}
+}
+
+.amber-input-search {
+	display: flex;
+	align-items: center;
+	
+	.amber-input {
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+	
+	.amber-input-search-button {
+		height: 32px;
+		padding: 0 6px !important;
+		border-top-left-radius: 0 !important;
+		border-bottom-left-radius: 0 !important;
+		border-left: none !important;
+		background-color: var(--color-primary) !important;
+		color: #fff !important;
+		border-color: var(--color-primary) !important;
+		line-height: 0;
+	}
+}
+
+.amber-input-lg {
+	font-size: 16px;
+	
+	.amber-input {
+		height: 40px;
+		padding: 6px 11px;
+	}
+	
+	.amber-input-addonBefore {
+		height: 40px;
+	}
+	
+	.amber-input-addonAfter {
+		height: 40px;
+	}
+	
+	.amber-input-search {
+		&-button {
+			height: 40px;
+		}
+	}
+}
+
+.amber-input-sm {
+	font-size: 14px;
+	
+	.amber-input {
+		height: 24px;
+		padding: 1px 7px;
+	}
+	
+	.amber-input-addonBefore {
+		height: 24px;
+	}
+	
+	.amber-input-addonAfter {
+		height: 24px;
+	}
+	
+	.amber-input-search {
+		&-button {
+			height: 24px;
+		}
+	}
+}
+

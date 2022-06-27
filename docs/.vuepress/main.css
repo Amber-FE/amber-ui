@@ -1,0 +1,99 @@
+img {
+  max-width: 1000% !important;
+}
+
+.icon-list {
+  overflow: hidden;
+  list-style: none;
+  padding: 0 !important;
+  border: 1px solid #eaeefb;
+  border-radius: 4px;
+}
+
+.icon-list li {
+  float: left;
+  width: 16.66%;
+  text-align: center;
+  height: 120px;
+  line-height: 120px;
+  color: #666;
+  font-size: 13px;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  margin-right: -1px;
+  margin-bottom: -1px;
+}
+
+.icon-list li span:first-child {
+  height: 100%;   
+}
+
+.icon-list li span:last-child {
+  margin-top: 10px;
+}
+
+.icon-list li span {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  line-height: normal;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
+    Microsoft YaHei, SimSun, sans-serif;
+  color: #99a9bf;
+  transition: color 0.15s linear;
+}
+
+.amber-icon {
+  font-size: 32px;
+}
+
+.radio-item {
+  width: 250px;display: flex;justify-content: space-around;
+}
+
+/* select组件 */
+.select-container {
+	display: flex;
+}
+
+.select-container-item {
+	width: 300px;
+	margin-right: 10px;
+}
+
+.select-tab-switch {
+	position: relative;
+	margin-bottom: 10px;
+}
+
+.select-tab-switch-container {
+	display: flex;
+}
+
+.select-tab-switch-container .item {
+	border: 1px solid #ddd;
+	cursor: pointer;
+	padding: 4px 10px;
+	font-size: 14px;
+}
+
+.select-tab-switch-container .item.active {
+	border-color: #1a9dff;
+	color: #1a9dff;
+}
+
+/* space组件 */
+.space-container {
+	display: flex;
+}
+
+.space-container-item {
+	width: 300px;
+	margin-right: 10px;
+}
+
+/* form 表单 */
+.demo-ruleForm {
+	width: 480px;
+}

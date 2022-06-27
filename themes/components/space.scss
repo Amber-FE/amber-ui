@@ -1,0 +1,19 @@
+.amber-space-container {
+	box-sizing: border-box;
+	margin: 0;
+	list-style: none;
+	position: relative;
+	width: 100%;
+	
+	&-item {
+		position: relative;
+		
+		&.amber-space--horizontal {
+			display: inline-block;
+		}
+		
+		&.amber-space--vertical {
+			display: block;
+		}
+	}
+}

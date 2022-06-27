@@ -1,0 +1,10 @@
+@import '../variables.scss';
+.amber-svg-icon {
+  text-align: center;
+  fill: currentColor;
+  overflow: hidden;
+
+  &--color {
+    color: $primary-color;
+  }
+}

@@ -1,0 +1,13 @@
+.amber-rate-container{
+  height: 20px;
+  overflow: hidden;
+  .amber-icon{
+    vertical-align: middle;
+  }
+  .rate-text{
+    line-height: 20px;
+    font-size: 14px;
+    vertical-align:middle;
+    user-select: none;
+  }
+}

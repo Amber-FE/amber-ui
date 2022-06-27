@@ -1,0 +1,114 @@
+.amber-tag-container {
+  border-radius: 2px;
+  font-size: 12px;
+  display: inline-block;
+  border: 1px solid transparent;
+  border-color: #dcdee0;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  // color: #cccccc;
+  &.amber-tag-dark {
+    background: #dcdee0;
+    color: #ffffff;
+    & .amber-tag-close {
+      color: #ffffff !important;
+    }
+  }
+  &.amber-tag-plain {
+    color: #606266;
+    & .amber-tag-close {
+      color: #606266 !important;
+    }
+  }
+  &.amber-tag-medium {
+    height: 26px;
+    line-height: 26px;
+    padding: 0 10px;
+  }
+  &.amber-tag-small {
+    height: 22px;
+    line-height: 22px;
+    padding: 0 8px;
+  }
+  &.amber-tag-mini {
+    height: 18px;
+    line-height: 18px;
+    padding: 0 5px;
+  }
+  & .amber-tag-close {
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
+    font-size: 12px;
+    line-height: 16px;
+    vertical-align: middle;
+    top: -1px;
+    border: 1px solid transparent;
+    right: -3px;
+    &:hover {
+      -webkit-transform:rotate(90deg);
+      transform:rotate(90deg);
+      -webkit-transition:-webkit-transform 0.2s ease-out;
+      transition:transform 0.2s ease-out;
+    }
+  }
+  &.amber-tag-primary {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    &.amber-tag-dark {
+      color: #ffffff;
+      background: var(--color-primary);
+      & .amber-tag-close {
+        color: #ffffff !important;
+      }
+    }
+    &.amber-tag-plain {
+      color: var(--color-primary);
+      background: none;
+      & .amber-tag-close {
+        color: var(--color-primary) !important;
+      }
+    }
+  }
+  &.amber-tag-warning {
+    border-color: var(--color-warning);
+    color: var(--color-warning);
+    &.amber-tag-dark {
+      color: #ffffff;
+      background: var(--color-warning);
+      & .amber-tag-close {
+        color: #ffffff !important;
+      }
+    }
+    &.amber-tag-plain {
+      color: var(--color-warning);
+      background: none;
+      & .amber-tag-close {
+        color: var(--color-warning) !important;
+      }
+    }
+  }
+
+  &.amber-tag-danger {
+    border-color: var(--color-danger);
+    color: var(--color-danger);
+    &.amber-tag-dark {
+      color: #ffffff;
+      background: var(--color-danger);
+      & .amber-tag-close {
+        color: #ffffff !important;
+      }
+    }
+    &.amber-tag-plain {
+      color: var(--color-danger);
+      background: none;
+      & .amber-tag-close {
+        color: var(--color-danger) !important;
+      }
+    }
+  }
+
+  & + .amber-tag-container {
+    margin-left: 5px;
+  }
+}

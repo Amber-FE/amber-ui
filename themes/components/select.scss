@@ -1,0 +1,250 @@
+@import '../variables.scss';
+
+.amber-select-container {
+	box-sizing: border-box;
+	margin: 0;
+	list-style: none;
+	position: relative;
+	width: 100%;
+	
+	/* select size */
+	&.amber-select-size--default {
+		font-size: 14px;
+		
+		.amber-select-box {
+			height: 32px;
+			line-height: 32px;
+			text-indent: 2px;
+			padding-left: 11px;
+			padding-right: 24px;
+			
+			.amber-select-icon {
+				right: 4px;
+			}
+		}
+	}
+	
+	&.amber-select-size--small {
+		font-size: 12px;
+		
+		.amber-select-box {
+			height: 24px;
+			line-height: 24px;
+			text-indent: 2px;
+			padding-left: 11px;
+			padding-right: 24px;
+			
+			.amber-select-icon {
+				right: 4px;
+			}
+		}
+	}
+	
+	&.amber-select-size--large {
+		font-size: 16px;
+		
+		.amber-select-box {
+			height: 40px;
+			line-height: 40px;
+			text-indent: 2px;
+			padding-left: 11px;
+			padding-right: 24px;
+			
+			.amber-select-icon {
+				right: 4px;
+			}
+		}
+	}
+	
+	.amber-select-box {
+		border: 1px solid $border-color-default;
+		user-select: none;
+		cursor: pointer;
+		position: relative;
+		
+		&:hover {
+			border: 1px solid $border-color-hover;
+		}
+		
+		&.amber-select--open {
+			border-color: $border-color-hover;
+			border-right-width: 1px !important;
+			outline: 0;
+			box-shadow: 0 0 0 2px $border-color-shadow;
+		}
+		
+		&.amber-select--disabled {
+			background-color: $disabled-color;
+		}
+		
+		&.amber-select--disabled:hover {
+			border: 1px solid $disabled-color;
+			cursor: not-allowed;
+		}
+		
+		.amber-select--placeholder {
+			// color: $text-color;
+			color:  #d9d9d9;
+		}
+		
+		.amber-select--text {
+			color: rgba(0,0,0,.65);
+		}
+		
+		&.amber-select-mode--default,&.amber-select-mode--tags,&.amber-select-mode--multiple {
+			height: auto;
+			min-height: 32px;
+			
+			.selected-list-container {
+				overflow: hidden;
+			}
+		}
+		
+		.amber-select-search {
+			position: relative;
+			height: 100%;
+			
+			> input {
+				border: none;
+				position: relative;
+				height: 100%;
+				padding: 0;
+				width: 100%;
+				outline: none;
+			}
+			
+			&--color {
+				color: $text-color;
+			}
+		}
+		
+		.amber-select-input {
+			position: relative;
+			height: 100%;
+			
+			> input {
+				border: none;
+				position: relative;
+				height: 100%;
+				padding: 0;
+				width: 100%;
+				outline: none;
+			}
+			
+			.selected-list-container {
+				margin: 0;
+				list-style: none;
+				padding: 0;
+				
+				&-item {
+					height: 24px;
+					margin-top: 3px;
+					line-height: 22px;
+					position: relative;
+					float: left;
+					max-width: 99%;
+					margin-right: 4px;
+					padding: 0 20px 0 10px;
+					overflow: hidden;
+					color: rgba(0,0,0,.65);
+					background-color: #fafafa;
+					border: 1px solid #e8e8e8;
+					border-radius: 2px;
+					cursor: default;
+					transition: padding .3s cubic-bezier(.645,.045,.355,1);
+					
+					&-content {
+						display: inline-block;
+					}
+					
+					&-remove {
+						display: inline-block;
+						cursor: pointer;
+					}
+					
+					&-remove:hover {
+						opacity: .7;
+					}
+				}
+			}
+		}
+		
+		.amber-select-icon {
+			position: absolute;
+			top: 50%;
+			line-height: 0;
+			transform: translateY(-50%);
+			display: inline-block;
+			
+			.amber-select--icon {
+				transition: .4s;
+				
+				&.amber-icon--up {
+					transform: rotateZ(180deg);
+				}
+			}
+		}
+		
+		.amber-select-clear {
+			position: absolute;
+			display: flex;
+			top: 50%;
+			right: 24px;
+			transform: translateY(-50%);
+			z-index: 2;
+			opacity: .75;
+			
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+	
+	.amber-select-list {
+		box-shadow: 0 0 5px #cccccc;
+		transform: scaleY(0);
+		transition: 0.4s;
+		transform-origin: top;
+		position: absolute;
+		z-index: 100;
+		width: 100%;
+		background-color: #fff;
+		margin-top: 3px;
+		border-radius: 4px;
+		padding: 8px 0;
+		
+		&.amber-select-list-open {
+			transform: scaleY(1);
+		}
+		
+		.amber-select-option {
+			display: flex;
+			align-items: center;
+			cursor: pointer;
+			height: 30px;
+			font-size: 14px;
+			padding: 0px 10px;
+			
+			&:hover {
+				background-color: #E6F7FF;
+			}
+			
+			&-text {
+				flex: 1;
+			}
+			
+			&--selected {
+				background-color: #FAFAFA;
+			}
+			
+			&--disabled {
+				cursor: not-allowed;
+				color: #ddd;
+			}
+			
+			&--disabled:hover {
+				background-color: transparent;
+			}
+		}
+	}
+}

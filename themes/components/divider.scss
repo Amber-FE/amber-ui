@@ -1,0 +1,47 @@
+.amber-divider {
+    display: flex;
+    align-items: center;
+    height: 2px;
+    background-color: #00f;
+    margin: 10px 0;
+    white-space: nowrap;
+    &-text {
+        background: #fff;
+    }
+}
+.vertical {
+    display: inline-block;
+    height: 60px;
+    width: 2px;
+    margin: 0 10px;
+}
+.dashed {
+    background: #fff;
+    border-style: dashed;
+    border-width: 2px 0px 0px;
+    border-color: #00f;
+}
+.vertical.dashed {
+    border-width: 0 0 0 2px;
+}
+
+.amber-divider::before {
+    content: "";
+}
+.amber-divider::after {
+    content: "";
+}
+.amber-divider::before,.amber-divider::after {
+    display: block;
+    flex: 1;
+    box-sizing: border-box;
+    height: 1px;
+    border-color: inherit;
+}
+.right::before,.left::after {
+    flex: 3;
+}
+.right::after,.left::before {
+    flex: 1;
+}
+

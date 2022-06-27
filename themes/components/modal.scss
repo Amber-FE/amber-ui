@@ -1,0 +1,128 @@
+.amber-modal-container {
+	
+	p {
+		margin: 0;
+	}
+	
+	.amber-modal-mask {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		z-index: 1000;
+		background-color: rgba(0,0,0,.45);
+		
+		&.amber-mask--visible {
+			animation: maskShow .3s forwards;
+		}
+		
+		&.amber-mask--hide {
+			animation: maskHide .3s forwards;
+		}
+	}
+	
+	.amber-modal-content {
+		position: fixed;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 1000;
+		display: flex;
+		flex-direction: column;
+		width: 520px;
+		max-height: 424px;
+		top: 160px;
+		margin: 0 auto;
+		background-color: #fff;
+		border-radius: 4px;
+		
+		&.amber-modal--visible {
+			animation: zoomIn .35s forwards;
+		}
+		
+		&.amber-modal--hide {
+			animation: zoomOut .35s forwards;
+		}
+		
+		&-header {
+			display: flex;
+			align-items: center;
+			padding: 16px 24px;
+			border-bottom: 1px solid #e8e8e8;
+			
+			.title {
+				flex: 1;
+				margin: 0;
+				color: rgba(0,0,0,.85);
+				font-weight: 500;
+				font-size: 16px;
+				line-height: 22px;
+				word-wrap: break-word;
+			}
+		}
+		
+		&-body {
+			padding: 24px;
+			line-height: 1.5;
+		}
+		
+		&-footer {
+			border-top: 1px solid #e8e8e8;
+			padding: 10px 16px;
+			text-align: right;
+			
+			.amber-button-container {
+				justify-content: center;
+			}
+			
+			.spinner {
+				width: 12px;
+				height: 12px;
+				margin-right: 6px;
+				position: relative;
+				float: left;
+				top: 3px;
+				background: transparent;
+				border: 1px solid transparent;
+				border-top: 1px solid #fff;
+				border-radius: 50%;
+				-webkit-animation: 1s spin linear infinite;
+				animation: 1s spin linear infinite;
+			}
+		}
+	}
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes zoomIn{
+	0%{opacity:0;-webkit-transform:scale3d(.3,.3,.3);transform:scale3d(.3,.3,.3)}
+	50%{opacity:1}
+}
+
+@keyframes zoomOut{
+	0%{opacity:1}
+	50%{opacity:0;-webkit-transform:scale3d(.3,.3,.3);transform:scale3d(.3,.3,.3)}
+	100%{opacity:0}
+}
+
+@keyframes maskHide {
+	0%{opacity:1}
+	50%{opacity:0}
+	100%{opacity:0}
+}
+
+@keyframes maskShow {
+	0%{opacity:0}
+	50%{opacity:1}
+}

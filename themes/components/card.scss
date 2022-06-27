@@ -1,0 +1,134 @@
+.amber-card{
+  width: 240px;
+  height: 361px;
+  box-sizing: border-box;
+  padding: 0 5px;
+  margin-bottom: 10px;
+  // background-color: rgb(255, 255, 245);
+  &:hover{
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+  }
+  &-container{
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  border: 1px solid #eee;
+  &-pic{
+    position: relative;
+    width: 160px;
+    height: 160px;
+    margin: 10px auto 0;
+    margin-top: 10px;
+    .label-box{
+      position: absolute;
+      bottom: 0;
+      left: -28px;
+      z-index: 6;
+      width: 100%;
+      display: flex;
+
+    }
+
+  }
+   &-smallPic{
+    position: absolute;
+    top: 0px;
+    left: -25px;
+    width: 21px;
+    height: 24px;
+   }
+   &-goodsPic{
+    display: block;
+    width: 160px;
+    height: 160px;
+    img{
+      vertical-align: middle;
+    }
+   }
+   &-goodsInfo{
+    margin: 10px 0 0;
+    &-name{
+      line-height: 23px;
+      height: 23px;
+      font-size: 18px;
+      font-weight: 700;
+      margin-left: 10px;
+     }
+     &-span{
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      text-align: center;
+      line-height: 16px;
+      background: linear-gradient(156deg, #F4F8FB 0%, #F4F8FB 100%);
+      opacity: 0.8;
+      border-radius: 2px;
+      font-family: Source Han Sans CN;
+      margin: 0 6px 0 10px;
+      font-size: 10px;
+      font-weight: 400;
+      color: #0690FE;
+     }
+     &-p{
+      width: 100%;
+      height: 22px;
+      line-height: 22px;
+      font-size: 12px;
+      color: #666666;
+      text-align: left;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      word-wrap: break-word;
+      word-break: break-all;
+     }
+     .goods-price{
+      margin-left:10px ;
+      &-yuan{
+         color: #e62f2a;
+         font-size: 14px;
+         font-weight: bolder;
+
+      }
+     }
+
+   }
+   .activity-content{
+    margin-left: 10px;
+    .one-price{
+    line-height: 20px;
+    font-size: 12px;
+    font-family: Source Han Sans CN;
+    font-weight: 400;
+    color: #1A9DFF;
+    background: #F7F8FA;
+      margin: 0 0 5px;
+      display: flex;
+      .maoli{
+        flex: 1;
+        text-align: center;
+      }
+      &-price{
+        text-align: center;
+        flex: 1;
+      }
+      .line{
+        height: 20px;
+        line-height: 17px;
+        color: #2894FF;
+        padding: 0 6px;
+        background: #EEF3FD;
+      }
+      &-tag{
+        display: flex;
+        flex-direction: row;
+        .amber-tag-container{
+          padding: 3px;
+        }
+      }
+    }
+   }
+
+  }
+}

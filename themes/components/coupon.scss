@@ -1,0 +1,97 @@
+.amber-coupon-container {
+  display: inline-block;
+  overflow: hidden;
+  & .cro_left_top,&  .cro_right_top,&  .cro_left_bottom,&  .cro_right_bottom {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    // border: 1px solid #fff;
+    z-index: 1;
+    background: #fff;
+}
+& .cro_left_top {
+  top: -1px;
+  left: -1px;
+  border-radius: 0 0 6px 0;
+}
+& .cro_right_top {
+  top: -1px;
+  right: -1px;
+  border-radius: 0 0 0 6px;
+}
+
+& .cro_left_bottom {
+  left: -1px;
+  bottom: -1px;
+  border-radius: 0 6px 0 0;
+}
+
+& .cro_right_bottom {
+  right: -1px;
+  bottom: -1px;
+  border-radius: 6px 0 0 0;
+}
+  &-left {
+    display: flex;
+    overflow: hidden;
+    &-icon {
+      position: absolute;
+      bottom: -20px;
+      left: -12px;
+      opacity: 0.05;
+    }
+    &-type {
+      // display: inline-block;
+      width: 41px;
+      height: 97px;
+      display: flex;
+      justify-items: center;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 400;
+      color: #FFFFFF;
+    }
+    &-content {
+      max-width: 226px;
+      padding: 12px 15px 10px 25px;
+      &-box {
+        text-align: left;
+        &>p {
+          //溢出隐藏
+          overflow: hidden;
+          //隐藏部分显示为省略号
+          text-overflow: ellipsis;
+          //禁止文本自动换行
+          white-space: nowrap
+        }
+        & .title {
+          font-size: 24px;
+          font-weight: 500;
+          color: #FFFFFF;
+        }
+        & .desc {
+          font-size: 12px;
+          font-weight: 400;
+          color: #FFFFFF;
+          line-height: 17px;
+        }
+      }
+    }
+  }
+  &-right {
+    &-content {
+      width: 127px;
+      height: 97px;
+      display: flex;
+      align-items: center;
+      & > .price {
+        width: 127px;
+        text-align: center;
+      }
+    }
+  }
+  p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+}

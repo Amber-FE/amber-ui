@@ -1,0 +1,49 @@
+@import '../variables.scss';
+
+.amber-checkbox {
+	position: relative;
+	display: inline-block;
+	margin-right: 8px;
+	
+	&--label {
+		cursor: pointer;
+		user-select: none;
+	}
+	
+	input[type='checkbox'] {
+		appearance: none;
+		height: 16px;
+		width: 16px;
+		cursor: pointer;
+		outline: none;
+		background: #fff;
+		border: 1px solid $border-color-default;
+		vertical-align: middle;
+		margin-top: 0;
+	}
+	
+	input[type='checkbox']:hover {
+		border: 1px solid $border-color-hover;
+	}
+	
+	input[type='checkbox']:checked {
+		color: #fff;
+		background-color: $primary-color;
+		border: 1px solid $border-color-hover;
+		position: relative;
+	}
+	
+	input[type='checkbox']:checked::after {
+		content: '✔';
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+	
+	&--disabled {
+		pointer-events: none;
+		opacity: .8;
+	}
+}
+

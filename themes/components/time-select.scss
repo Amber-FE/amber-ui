@@ -1,0 +1,46 @@
+@import '../transition.scss';
+@import '../variables.scss';
+
+.amber-time-select {
+	width: 240px;
+	position: relative;
+	
+	.amber-time-select--wrapper {
+		position: absolute;
+		z-index: 9;
+		background-color: #fff;
+		width: 240px;
+		box-shadow: 0 0 5px #ccc;
+		margin-top: 3px;
+		border-radius: 4px;
+		
+		.amber-time-select--body {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			max-height: 216px;
+			overflow: auto;
+			
+			&::-webkit-scrollbar {
+				width: 0px;
+			}
+			
+			.amber-time-select--item {
+				padding: 8px 10px;
+				font-size: 14px;
+				line-height: 20px;
+				
+				&.active {
+					color: $primary-color;
+					font-weight: 700;
+				}
+				
+				&:hover {
+					background-color: #f5f7fa;
+					font-weight: 700;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}

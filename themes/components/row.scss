@@ -1,0 +1,51 @@
+@import '../variables.scss';
+
+.amber-row {
+	display: flex;
+	flex-flow: row wrap;
+	margin: 8px 0;
+	
+	> div:nth-child(odd) {
+		background: $primary-color;
+	}
+	
+	> div:nth-child(even) {
+		background: $primary-color-end;
+	}
+	
+	> div:not(.gutter-row) {
+		padding: 8px 0;
+	}
+}
+
+.amber-row-top {
+	align-items: flex-start;
+}
+
+.amber-row-middle {
+	align-items: center;
+}
+
+.amber-row-bottom {
+	align-items: flex-end;
+}
+
+.amber-row-start {
+	justify-content: start;
+}
+
+.amber-row-end {
+	justify-content: end;
+}
+
+.amber-row-center {
+	justify-content: center;
+}
+
+.amber-row-space-around {
+	justify-content: space-around;
+}
+
+.amber-row-space-between {
+	justify-content: space-between;
+}
