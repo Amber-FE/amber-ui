@@ -1,22 +1,14 @@
 <p align="center">
-  
+  <a href="https://amber.onekdrug.com/">
+    <img  src="./docs/.vuepress/public/logo.png">
+  </a>
 </p>
 
-<h1 align="center">
-<a href="  https://amber.onekdrug.com/">
-    <img width="250" src="./docs/.vuepress/public/logo.png">
-  </a>
+<h1 align="center"> 
   <a href="https://amber.onekdrug.com/" target="_blank">amber-ui</a>
 </h1>
 
-<div align="center">
-
-企业级UI组件
-
-
-</div>
-
-
+[![](https://github.com/Amber-FE/amber-ui/blob/main/docs/.vuepress/public/default.png)](https://amber.onekdrug.com/)
 ## 特性
 
 - 提炼自企业级中后台产品的交互语言和视觉风格。
@@ -26,9 +18,9 @@
 
 - 现代浏览器。 版本支持 IE 9+
 
-| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png" alt="Opera" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Opera | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/electron/electron_48x48.png" alt="Electron" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Electron |
-| --- | --- | --- | --- | --- | --- |
-| Edge | last 2 versions | last 2 versions | last 2 versions | last 2 versions | last 2 versions |
+| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png" alt="Opera" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Opera |
+| --- | --- | --- | --- | --- |
+| Edge | last 2 versions | last 2 versions | last 2 versions | last 2 versions |
 
 ## 安装
 
@@ -46,17 +38,17 @@ $ yarn add amber-ui
 
 ## 快速开始
 ``` javascript
-import Vue from 'vue'
-import Element from 'amber-ui'
-Vue.use(Element)
-// or
-import {
-  Select,
-  Button
-  // ...
-} from 'amber-ui'
-Vue.component(Select.name, Select)
-Vue.component(Button.name, Button)
+ // 全部引入
+  import 'amber-ui/dist/css/index.css';
+  import AmberUi from 'amber-ui';
+
+  Vue.use(AmberUi)
+
+  // 按需引用
+  import 'amber-ui/dist/css/picture-stretch.css';
+  import { PictureStretch } from 'amber-ui';
+
+  Vue.use(PictureStretch)
 ```
 ## 链接
 
