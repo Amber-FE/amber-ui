@@ -10,7 +10,7 @@
   border-radius: 3px;
   transition: var(--theme-transition);
   span {
-    margin: 0px 5px;
+  margin: 0px 5px;
 	width: 100%;
   }
 
@@ -85,15 +85,15 @@
   }
   &--circle {
     &--large{
-      width: 96px;
+      width: 100px;
       height:100px;
     }
     &--normal{
-      width: 76px;
+      width: 80px;
       height:80px
     }
     &--small{
-      width: 56px;
+      width: 60px;
       height: 60px;
     }
   }
@@ -123,6 +123,9 @@
   	border-radius: 50%;
   	-webkit-animation: 1s spin linear infinite;
   	animation: 1s spin linear infinite;
+  }
+  & + .amber-button-container{
+    margin-left: 5px;
   }
 }
 
