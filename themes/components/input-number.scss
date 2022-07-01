@@ -1,78 +1,62 @@
-@import '../variables.scss';
-@mixin jiantou {
-  position: absolute;
-  z-index: 1;
-  font-size: 13px;
 
-}
-.amber-input-number-container{
-  border-radius: 4px;
-  position: relative;
-  width: 180px;
-  overflow: hidden;
-  border: 1px solid #ccc;
-  text-align: center;
-  display: inline-block;
-
-  &--large{
-    height: 40px;
-    width: 250px;
-  }
-  &--default{
-    height: 32px;
-  }
-  &--small{
-    height: 24px;
-  }
-  span{
-    background: #f5f7fa;
-    box-sizing: border-box;
+  .amber-input-number-container{
     display: flex;
-    align-items: center;
-    user-select: none;
-  }
-  &[disabled] {
-    cursor: not-allowed;
-    color: $button-disable-color;
-  }
-  &-decrease{
-    @include jiantou;
-    top: 0;
-    left:1px;
-    border-right: 1px solid #ccc;
-    .left{
-      &[disabled] {
-        cursor: not-allowed !important;
-        color: $button-disable-color;
+    // height: 40px;
+    // width: 100px;
+    &-input{
+      height: 40px;
+      color: #666666;
+      position: relative;
+      &-middle{
+        width: 81px;
+      }
+      &-small{
+        width: 71px;
+      }
+      &-large {
+        width: 100px;
+      }
+      .amber-input-container{
+        .amber-input{
+          // text-align: center;
+          height: 40px;
+          font-size: 18px;
+          font-family: DIN-Bold, DIN;
+          font-weight: bold;
+          padding-left: 14px;
+        &[disabled]{
+          background-color: rgba($color: #ccc, $alpha: 0.2);
+        }
+        }
       }
     }
-
-  }
-  &-increase{
-    @include jiantou;
-    top: 0;
-    right: 1px;
-    border-left: 1px solid #ccc;
-    .right{
-      height: 38px;
-      &[disabled] {
-        cursor: not-allowed !important;
-        color: $button-disable-color;
-      }
-    }
-  }
-  .amber-input-container{
-    .amber-input{
+    .jiantou{
+      display: flex;
+      flex-direction: column;
+      margin-left: 3px;
+      justify-content: space-between;
+      user-select: none;
+    .jiantou-up{
+      box-sizing: border-box;
+      line-height: 19px;
       text-align: center;
-      padding-left: 50px;
-      padding-right: 50px;
-      font-size: 16px;
-      border: 0;
-      cursor: pointer;
-      &[disabled] {
-        cursor: not-allowed;
-        color: $button-disable-color;
-      }
+      width: 18px;
+      height: 19px;
+      background: #FFFFFF;
+      border: 1px solid #EEEEEE;
+    }
+    .jiantou-down{
+      box-sizing: border-box;
+      line-height: 19px;
+      text-align: center;
+      width: 18px;
+      height: 19px;
+      background: #FFFFFF;
+      border: 1px solid #EEEEEE;
+    }
+    }
+    & + .amber-input-number-container{
+      margin-left: 15px;
+    }
   }
-}
-}
+
