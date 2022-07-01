@@ -1,55 +1,59 @@
 <template>
-  <div :class="getInputNumberClass" :disabled="disabled">
-    <span @click.stop="decreaseVal" class="amber-input-number-container-decrease"
-      ><amber-icon
-        :style="getInputNumberLeftStyle"
-        :size="iconSize"
-        icon-class="jiantou_down"
-        class="left"
+  <div class="amber-input-number-container">
+    <div class="amber-input-number-container-input" :class="getInputClass">
+      <amber-input
+        v-model="val"
         :disabled="disabled"
-        :color="color"
-        pointer
-    /></span>
-    <span @click.stop="increaseVal" class="amber-input-number-container-increase"
-      ><amber-icon
-        :style="getInputNumberRightStyle"
-        :size="iconSize"
-        icon-class="jiantou_up"
-        class="right"
-        :disabled="disabled"
-        :color="color"
-        pointer
-    /></span>
-    <amber-input
-      @change="onChange"
-      @focus="onFocus"
-      @blur="onBlur"
-      :value="currentVal"
-      :disabled="disabled"
-      :size="size"
-    />
+        @blur="onblur"
+        @focus="onfocus"
+        @change="onchange"
+      ></amber-input>
+    </div>
+    <div class="jiantou">
+      <div class="jiantou-down" :style="getDownStyle" @click="decrease">
+        <amber-icon
+          size="16px"
+          :disabled="disabled"
+          :style="getDownStyle"
+          iconClass="jiantou_down"
+        ></amber-icon>
+      </div>
+      <div class="jiantou-up" :style="getUpStyle" @click="increase">
+        <amber-icon
+          size="16px"
+          :disabled="disabled"
+          :style="getUpStyle"
+          iconClass="jiantou_up"
+        ></amber-icon>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import Big from 'big.js'
 import AmberInput from '../../input/index'
 import AmberIcon from '../../icon/index'
 
-const prefix = 'amber-input-number-container'
 export default {
-  name: 'amber-input-number',
-  components: { AmberInput, AmberIcon },
+  name: 'AmberInputNumber',
+  components: {
+    AmberInput,
+    AmberIcon
+  },
+  model: {
+    prop: 'value',
+    event: 'change'
+  },
   data() {
     return {
-      val: `${this.value}`,
-      myVal: null
+      val: `${this.value}`
     }
   },
   props: {
     value: {
-      // 绑定值
       type: Number,
-      default: () => 0
+      default: 0
     },
     min: {
       type: Number,
@@ -59,125 +63,114 @@ export default {
       type: Number,
       default: () => Infinity
     },
-    step: {
-      type: Number,
-      default: () => 1
-    },
-    size: {
-      // small large default
-      type: String,
-      default: () => 'default'
-    },
     disabled: {
       type: Boolean,
       default: () => false
     },
-    color: {
-      // 增加和减少的颜色
-      type: [String, Boolean],
-      default: false
-    }
-  },
-
-  computed: {
-    iconSize() {
-      if (this.size === 'small') {
-        return '24px'
-      }
-      if (this.size === 'default') {
-        return '32px'
-      }
-      if (this.size === 'large') {
-        return '40px'
-      }
-      return '32px'
+    step: {
+      type: Number,
+      default: () => 1
     },
-    currentVal: {
-      get() {
-        if (this.myVal) {
-          return this.myVal
-        }
-        const Val = this.val
-        return Val
-      },
-      set() {
-        this.val = this.currentVal
-      }
+    precision: {
+      type: Number,
+      default: () => 0
     },
-    getInputNumberClass() {
-      return {
-        [`${prefix}`]: true,
-        [`${prefix}--${this.size}`]: this.size
-      }
-    },
-    getInputNumberRightStyle() {
-      return {
-        cursor: this.val >= this.max ? 'not-allowed' : 'pointer'
-      }
-    },
-    getInputNumberLeftStyle() {
-      return {
-        cursor: this.val <= this.min ? 'not-allowed' : 'pointer'
-      }
+    size: {
+      type: String,
+      default: () => 'small'
     }
   },
   watch: {
     val: {
-      immediate: true,
-      handler() {
-        this.getCurrentVal()
-        this.currentVal = this.val
-        this.myVal = null
+      handler(newVal) {
+        this.getCurrentVal(newVal)
+      },
+      immediate: true
+    }
+  },
+  computed: {
+    getInputClass() {
+      return {
+        [`amber-input-number-container-input-${this.size}`]: this.size
+      }
+    },
+    getprecision() {
+      if (`${this.step}`.includes('.')) {
+        const index = `${this.step}`.indexOf('.')
+        return `${this.step}`.slice(index + 1).length
+      }
+      return this.precision
+    },
+    getDownStyle() {
+      return {
+        cursor: this.val <= this.min || this.disabled ? 'not-allowed' : 'pointer'
+      }
+    },
+    getUpStyle() {
+      return {
+        cursor: this.val >= this.max || this.disabled ? 'not-allowed' : 'pointer'
       }
     }
   },
   methods: {
-    getCurrentVal() {
-      if (this.val >= this.max) {
+    getCurrentVal(newVal) {
+      if (newVal >= this.max) {
         this.val = `${this.max}`
-      } else if (this.val <= this.min) {
-        this.val = `${this.min}`
-      } else if (this.disabled) {
-        this.val = `${this.value}`
       }
+      if (newVal <= this.min) {
+        this.val = `${this.min}`
+      }
+      this.val = `${Number(newVal).toFixed(this.getprecision)}`
     },
-    onChange(v) {
-      const oldVal = Number(this.val)
-      if (v.match(/(-?)\d+/g)) {
-        this.val = v
-          .match(/(-?)\d+/g)
+    onchange(newVal) {
+      this.getCurrentVal(`${newVal}`)
+      this.$emit('change', Number(this.val))
+    },
+    increase() {
+      if (this.disabled || this.val >= this.max) {
+        return
+      }
+      // this.val = `${Number(this.val) + this.step}`
+      const bigA = new Big(Number(this.val))
+      this.val = bigA.plus(this.step).toString()
+      this.val = `${Number(this.val).toFixed(this.getprecision)}`
+      this.$emit('change', Number(this.val))
+    },
+    decrease() {
+      if (this.disabled || this.val <= this.min) {
+        return
+      }
+      // this.val = `${this.val - this.step}`
+      const bigA = new Big(Number(this.val))
+      this.val = bigA.minus(this.step).toString()
+      this.val = `${Number(this.val).toFixed(this.getprecision)}`
+      this.$emit('change', Number(this.val))
+    },
+    onblur(e) {
+      const newVal = e.target.value
+      // 去掉非数字和前面多的0
+      if (newVal.trim().match(/^(-?)\d*(.?)\d+$/g)) {
+        this.val = newVal
+          .trim()
+          .match(/^(-?)\d*(.?)\d+$/g)
           .splice(0, 1)
           .join()
+        if (this.val >= 1) {
+          this.val = this.val.replace(/^\b(0+)/gi, '')
+        }
+        if (this.val <= -1) {
+          this.val = this.val.replace(/^\b(0+)/gi, '')
+        }
       } else {
-        this.val = 0
+        const a = 0
+        this.val = a.toFixed(this.getprecision)
       }
-      this.getCurrentVal()
-      this.$emit('change', oldVal, Number(this.val))
-    },
-    onBlur(e) {
+      this.getCurrentVal(this.val)
       e.target.value = this.val
       this.$emit('blur', e)
     },
-    onFocus(e) {
+    onfocus(e) {
       this.$emit('focus', e)
-    },
-    decreaseVal() {
-      if (this.disabled) return
-      const oldVal = Number(this.val)
-      this.val = `${this.val - this.step}`
-      this.getCurrentVal()
-      if (oldVal !== Number(this.val)) {
-        this.$emit('change', oldVal, Number(this.val))
-      }
-    },
-    increaseVal() {
-      if (this.disabled) return
-      const oldVal = Number(this.val)
-      this.val = `${Number(this.val) + this.step}`
-      this.getCurrentVal()
-      if (oldVal !== Number(this.val)) {
-        this.$emit('change', oldVal, Number(this.val))
-      }
     }
   }
 }

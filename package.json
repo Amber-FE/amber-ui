@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "async-validator": "^4.1.1",
+    "big.js": "^6.2.0",
     "core-js": "^3.6.5",
     "gulp-sass": "^5.1.0",
     "sass": "^1.49.0",
@@ -74,8 +75,7 @@
     "vue-template-compiler": "^2.6.11",
     "vuepress": "^1.9.7",
     "vuepress-plugin-demo-container": "^0.2.0",
-    "webpack-cli": "^4.9.1",
-    "webpack-node-externals": "^3.0.0"
+    "webpack-cli": "^4.9.1"
   },
   "browserslist": [
     "> 1%",

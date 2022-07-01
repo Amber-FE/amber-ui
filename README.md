@@ -38,17 +38,17 @@ $ yarn add amber-ui
 
 ## 快速开始
 ``` javascript
-import Vue from 'vue'
-import Element from 'amber-ui'
-Vue.use(Element)
-// or
-import {
-  Select,
-  Button
-  // ...
-} from 'amber-ui'
-Vue.component(Select.name, Select)
-Vue.component(Button.name, Button)
+ // 全部引入
+  import 'amber-ui/dist/css/index.css';
+  import AmberUi from 'amber-ui';
+
+  Vue.use(AmberUi)
+
+  // 按需引用
+  import 'amber-ui/dist/css/picture-stretch.css';
+  import { PictureStretch } from 'amber-ui';
+
+  Vue.use(PictureStretch)
 ```
 ## 链接
 
