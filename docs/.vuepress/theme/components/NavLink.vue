@@ -6,7 +6,7 @@
     :exact="exact"
     @focusout.native="focusoutAction"
   >
-    <amber-button size="small" text type="primary">{{ item.text }}</amber-button> 
+    <amber-button size="small" text type="primary">{{ item.text }}</amber-button>
   </RouterLink>
   <!-- <a
     v-else

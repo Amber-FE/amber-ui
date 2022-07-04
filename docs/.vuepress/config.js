@@ -1,94 +1,195 @@
+const NavItems4EN = [
+  {
+    text: "design",
+    link: "/404",
+  },
+  {
+    text: "document",
+    link: "/405",
+  },
+  {
+    text: "components",
+    link: "/en/guide/intro",
+  },
+  {
+    text: "resource",
+    link: "/406",
+  },
+]
+const NavItems4ZH = [
+  {
+    text: "设计",
+    link: "/404",
+  },
+  {
+    text: "文档",
+    link: "/405",
+  },
+  {
+    text: "组件",
+    link: "/intro",
+  },
+  {
+    text: "资源",
+    link: "/406",
+  },
+]
+const Sidebar4EN =  [
+  // '/componentDocs/icon',
+  // '/componentDocs/pictureStretch',
+  // '/componentDocs/pictureRotation'
+  {
+    title: "Guide", // 必要的
+    collapsable: false, // 可选的, 默认值是 true,
+    children: ["/en/guide/intro", "/en/guide/start", "/en/guide/theme"],
+  },
+  {
+    title: "Basic", // 必要的
+    collapsable: false, // 可选的, 默认值是 true,
+    children: [
+      "/en/basic/container",
+      "/en/basic/grid",
+      "/en/basic/icon",
+      "/en/basic/button",
+      "/en/basic/dropdown",
+      "/en/basic/price",
+      "/en/basic/tips",
+      "/en/basic/tag",
+      "/en/basic/space",
+      "/en/basic/modal",
+      "/en/basic/divider",
+      "/en/basic/notification",
+      "/en/basic/tree",
+      "/en/basic/infinitescroll"
+    ],
+  },
+{
+title: "Form",
+collapsable: false,
+children: [
+  "/en/form/input",
+  "/en/form/radio",
+  "/en/form/checkbox",
+  "/en/form/select",
+  "/en/form/switch",
+  "/en/form/date-picker",
+  "/en/form/time-picker",
+  "/en/form/form",
+  "/en/form/inputNumber",
+  "/en/form/rate"
+]
+},
+  {
+    title: "Picture", // 必要的
+    collapsable: false,
+    children: ["/en/picture/preview", "/en/picture/rotation", "/en/picture/stretch"],
+  },
+  {
+    title: "Business",
+    collapsable: false,
+    children: [
+      "en/business/coupon",
+      "en/business/card",
+  ],
+  },
+]
+
+const Sidebar4ZH = [
+  // '/componentDocs/icon',
+  // '/componentDocs/pictureStretch',
+  // '/componentDocs/pictureRotation'
+  {
+    title: "指南", // 必要的
+    collapsable: false, // 可选的, 默认值是 true,
+    children: ["/guide/intro", "/guide/start", "/guide/theme"],
+  },
+  {
+    title: "基础组件", // 必要的
+    collapsable: false, // 可选的, 默认值是 true,
+    children: [
+      "/basic/container",
+      "/basic/grid",
+      "/basic/icon",
+      "/basic/button",
+      "/basic/dropdown",
+      "/basic/price",
+      "/basic/tips",
+      "/basic/tag",
+      "/basic/space",
+      "/basic/modal",
+      "/basic/divider",
+      "/basic/notification",
+      "/basic/tree",
+      "/basic/infinitescroll"
+    ],
+  },
+{
+title: "表单组件",
+collapsable: false,
+children: [
+  "/form/input",
+  "/form/radio",
+  "/form/checkbox",
+  "/form/select",
+  "/form/switch",
+  "/form/date-picker",
+  "/form/time-picker",
+  "/form/form",
+  "/form/inputNumber",
+  "/form/rate"
+]
+},
+  {
+    title: "图片组件", // 必要的
+    collapsable: false,
+    children: ["/picture/preview", "/picture/rotation", "/picture/stretch"],
+  },
+  {
+    title: "业务组件", //
+    collapsable: false,
+    children: [
+      "/business/coupon",
+      "/business/card",
+  ],
+  },
+]
+
 module.exports = {
   base: "/",
   themeConfig: {
+    editLinks: false,
     logoName: "Amber",
     logo: "/logo.png",
-    search: false,
-    nav: [
-      // 配置顶部导航栏
-      {
-        text: "设计",
-        link: "/404",
+    repo: 'Amber-FE/amber-ui',
+    docsDir: 'docs/',
+    home:'/',
+    locales: {
+      '/': {
+        label: '简体中文',
+        selectText: '选择语言',
+        ariaLabel: '选择语言',
+        nav: NavItems4ZH,
+        sidebar: Sidebar4ZH
       },
-      {
-        text: "文档",
-        link: "/405",
-      },
-      {
-        text: "组件",
-        link: "/guide/intro",
-      },
-      {
-        text: "资源",
-        link: "/406",
-      },
-    ],
-    sidebar: [
-      // '/componentDocs/icon',
-      // '/componentDocs/pictureStretch',
-      // '/componentDocs/pictureRotation'
-      {
-        title: "指南", // 必要的
-        collapsable: false, // 可选的, 默认值是 true,
-        children: ["/guide/intro", "/guide/start", "/guide/theme"],
-      },
-      {
-        title: "基础组件", // 必要的
-        collapsable: false, // 可选的, 默认值是 true,
-        children: [
-          "/basic/container",
-          "/basic/grid",
-          "/basic/icon",
-          "/basic/button",
-          "/basic/dropdown",
-          "/basic/price",
-          "/basic/tips",
-          "/basic/tag",
-          "/basic/space",
-          "/basic/modal",
-          "/basic/divider",
-          "/basic/notification",
-          "/basic/tree",
-          "/basic/infinitescroll"
-        ],
-      },
-	  {
-		title: "表单组件",
-		collapsable: false,
-		children: [
-		  "/form/input",
-		  "/form/radio",
-		  "/form/checkbox",
-		  "/form/select",
-		  "/form/switch",
-		  "/form/date-picker",
-		  "/form/time-picker",
-		  "/form/form",
-      "/form/inputNumber",
-      "/form/rate"
-		]
-	  },
-      {
-        title: "图片组件", // 必要的
-        collapsable: false,
-        children: ["/picture/preview", "/picture/rotation", "/picture/stretch"],
-      },
-      {
-        title: "业务组件", // 可选的
-        collapsable: false,
-        children: [
-          "/business/coupon",
-          "/business/card",
-      ],
-      },
-    ],
+      '/en/': {
+          label: 'English',
+          selectText: 'Language',
+          ariaLabel: 'Select language',
+          nav: NavItems4EN,
+          sidebar: Sidebar4EN
+      }
+    }
   },
-  plugins: ["demo-container"],
   locales: {
     // 键名是该语言所属的子路径
     // 作为特例，默认语言可以使用 '/' 作为其路径。
-    "/": {
-      lang: "zh-CN", // 将会被设置为 <html> 的 lang 属性
+    '/': {
+      lang: 'en-US', // 将会被设置为 <html> 的 lang 属性
     },
+    '/en/': {
+      lang: 'zh-CN',
+    }
   },
+  plugins: ["demo-container"],
+
 }
