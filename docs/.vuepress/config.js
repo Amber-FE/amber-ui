@@ -27,7 +27,7 @@ const NavItems4ZH = [
   },
   {
     text: "组件",
-    link: "/intro",
+    link: "/guide/intro",
   },
   {
     text: "资源",
