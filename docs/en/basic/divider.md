@@ -1,37 +1,56 @@
 # Divider
 
-#### 示例
+#### Example
 
-### 基础用法
+### Basic usage
+
 ::: demo
-```html
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.</p>
-<AmberDivider></AmberDivider>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.</p>
-<AmberDivider dashed></AmberDivider>
-<AmberDivider type="vertical"></AmberDivider>
-<AmberDivider type="vertical" dashed></AmberDivider>
 
+```html
+<p>We climbed to the roof to watch the sunset</p>
+<amber-divider></amber-divider>
+<p>Sing the old days again</p>
+<amber-divider dashed></amber-divider>
 ```
+
 :::
 
-### 分隔文字内容用法
-::: demo
-```html
-<AmberDivider>With Text</AmberDivider>
-你健康 我健康
-<AmberDivider dashed>Dashed Text</AmberDivider>
-大家一块健康
-<AmberDivider orientation="right">Right Text</AmberDivider>
-<AmberDivider orientation="left" dashed>Left Text</AmberDivider>
+### Vertical partition
 
+::: demo
+
+```html
+<div style="display: flex">
+  <span>Sun WuKong</span>
+  <amber-divider type="vertical"></amber-divider>
+  <span>Zhu Bajie</span>
+  <amber-divider type="vertical" dashed></amber-divider>
+  <span>Sha Wujing</span>
+</div>
 ```
+
+:::
+
+### Separate text content usage
+
+::: demo
+
+```html
+<amber-divider>With Text</amber-divider>
+Your health
+<amber-divider dashed>Dashed Text</amber-divider>
+My health
+<amber-divider orientation="right">Right Text</amber-divider>
+Everyone is healthy together
+<amber-divider orientation="left" dashed>Left Text</amber-divider>
+```
+
 :::
 
 ### API
 
-| 参数        | 说明            | 类型   |       可选值           |   默认值     |
-| ----------- | -------------- | ------ | ---------------------- | ----------- |
-| type        | 水平或垂直类型  | string |   horizontal/vertical  |   horizontal  |
-| dashed      | 是否虚线        | boolean|        boolean         |    false     |
-| orientation | 分割线文字的位置 | string |        left/right     |    center     |
+| Parameter   | Explain          | Type    | Optional value      | Default value|
+| ----------- | ---------------- | ------- | ------------------- | ---------- |
+| type        | Horizontal or vertical| string  | horizontal/vertical | horizontal |
+| dashed      | Dotted line      | boolean | boolean             | false      |
+| orientation | Text position    | string  | left/right          | center     |
