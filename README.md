@@ -10,7 +10,7 @@
 
 [![](https://github.com/Amber-FE/amber-ui/blob/main/docs/.vuepress/public/default.png)](https://amber.onekdrug.com/)
 
- [简体中文] | English(./README-en-US.md)
+ 简体中文 | [English](./README-en-US.md)
 ## 特性
 
 - 提炼自企业级中后台产品的交互语言和视觉风格。

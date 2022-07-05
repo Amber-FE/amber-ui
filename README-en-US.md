@@ -10,7 +10,7 @@
 
 [![](https://github.com/Amber-FE/amber-ui/blob/main/docs/.vuepress/public/default.png)](https://amber.onekdrug.com/)
 
-English | [简体中文](./README-en-US.md)
+English | [简体中文](./README.md)
 ## Features
 
 - An enterprise-class UI design system for desktop applications.
