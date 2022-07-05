@@ -10,23 +10,23 @@
 
 [![](https://github.com/Amber-FE/amber-ui/blob/main/docs/.vuepress/public/default.png)](https://amber.onekdrug.com/)
 
- [简体中文] | English(./README-en-US.md)
-## 特性
+English | [简体中文](./README-en-US.md)
+## Features
 
-- 提炼自企业级中后台产品的交互语言和视觉风格。
-- 开箱即用的高质量 Vue 组件。
+- An enterprise-class UI design system for desktop applications.
+- A set of high-quality Vue components out of the box.。
 
-## 支持环境
+## Environment Support
 
-- 现代浏览器。 版本支持 IE 9+
+- Modern browsers. v1.x support Internet Explorer 9+
 
 | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png" alt="Opera" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Opera |
 | --- | --- | --- | --- | --- |
 | Edge | last 2 versions | last 2 versions | last 2 versions | last 2 versions |
 
-## 安装
+## Install
 
-### 使用 npm 或 yarn 安装
+### Using npm or yarn
 
 ```bash
 $ npm install amber-ui --save
@@ -36,23 +36,23 @@ $ npm install amber-ui --save
 $ yarn add amber-ui
 ```
 
-如果你的网络环境不佳，推荐使用 [cnpm](https://github.com/cnpm/cnpm)。
+If you are in a bad network environment，you can try other registries and tools like [cnpm](https://github.com/cnpm/cnpm)。
 
-## 快速开始
+## Quick Start
 ``` javascript
- // 全部引入
   import 'amber-ui/dist/css/index.css';
   import AmberUi from 'amber-ui';
 
   Vue.use(AmberUi)
 
-  // 按需引用
+  //or
+
   import 'amber-ui/dist/css/picture-stretch.css';
   import { PictureStretch } from 'amber-ui';
 
   Vue.use(PictureStretch)
 ```
-## 链接
+## Links
 
-- [首页](https://amber.onekdrug.com/)
-- [Vue 官方文档](https://cn.vuejs.org/)
+- [Home page](https://amber.onekdrug.com/)
+- [Vue](https://cn.vuejs.org/)
