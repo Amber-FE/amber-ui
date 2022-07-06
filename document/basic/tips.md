@@ -5,13 +5,19 @@
 ### 示例
 ::: demo
 ```html
-<amber-tips :icon-class="iconClass" :text="text" />
+<amber-tips iconColor :text="tipsText" type="tips" />
+<amber-tips :text="successText" type="success" />
+<amber-tips :text="warningText" type="warning" />
+<amber-tips :text="dangerText" type="danger" />
+
 <script>
   export default {
     data() {
       return {
-        text: "【温馨提示】资质审核通过后，收货地址不可更改，如有特殊情况请联系您的专属地区经理或平台客服",
-        iconClass: "a-zhongxichengyao3x",
+        tipsText: "提示文案，常规提示",
+        successText: "提示文案，成功提示",
+        warningText: "提示文案，预警提示(默认)",
+        dangerText: "提示文案，失败提示"
       };
     },
   };
@@ -22,8 +28,6 @@
 ### Tips Attributes
 
 | 参数       | 说明     | 类型   | 是否必要 | 默认值              |
-| ---------- | -------- | ------ | -------- | ------------------- |
-| type       | 类型     | string | 否       | warning 暂未实现    |
-| text       | 文本内容 | string | 是       | -                   |
-| icon-class | 图标名称 | string | 否       | a-xingzhuangjiehe2x |
-| icon-color | 字体颜色 | string | 否       | #ED6A0C             |
+| ---------- | -------- | ------ | -------- | -------------------|
+| type       | 类型     | string | 否       | warning             |
+| text       | 提示信息 | string | 是       | -                   |
