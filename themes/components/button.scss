@@ -7,7 +7,7 @@
   cursor: pointer;
   font-size: 14px;
   border: none;
-  border-radius: 3px;
+  border-radius: 4px;
   transition: var(--theme-transition);
   span {
   margin: 0px 5px;
@@ -15,7 +15,11 @@
   }
 
   &:hover {
-   opacity:  0.9;
+    &:not([disabled]):not(.amber-button-container--text) {
+      opacity:  0.8;
+      color: #0685FE;
+      border-color: #0685FE;
+    }
   }
 
   &:active {
@@ -33,10 +37,35 @@
     border: 1px solid $button-default-border-color
   }
 
+  &--default:hover {
+    &:not([disabled]):not(.amber-button-container--text) {
+      transition: .1s;
+      background: #c6e2ff;
+      border-color: #c6e2ff;
+    }
+  }
+
   &--primary {
     color: $button-primary-color;
-    background: $button-primary-bg-color;
+    background: #0BA9FF;
     border: 1px solid $button-primary-border-color
+  }
+
+  &--primary:hover {
+    &:not([disabled]):not(.amber-button-container--text) {
+      transition: .1s;
+      background: #409eff;
+      color: #fff;
+      border-color: #409eff;
+    }
+  }
+
+  &--primary:active {
+    &:not([disabled]):not(.amber-button-container--text) {
+      transition: 0.1s;
+      background: #3a8ee6;
+      border-color: #3a8ee6;
+    }
   }
 
   &--warning {
@@ -45,15 +74,52 @@
     border: 1px solid $button-warning-border-color
   }
 
+  &--warning:hover {
+    &:not([disabled]):not(.amber-button-container--text) {
+      transition: .1s;
+      background: $button-warning-bg-color;
+      color: #fff;
+      border-color: $button-warning-bg-color;
+      opacity: 0.8;
+    }
+  }
+
+  &--warning:active {
+    &:not([disabled]):not(.amber-button-container--text) {
+      transition: 0.1s;
+      background: #cf9236;
+      border-color: #cf9236;
+    }
+  }
+
   &--danger {
     color: $button-danger-color;
     background: $button-danger-bg-color;
     border: 1px solid $button-danger-border-color
   }
 
+  &--danger:hover {
+    &:not([disabled]):not(.amber-button-container--text) {
+      transition: .1s;
+      background: $button-danger-bg-color;
+      color: #fff;
+      border-color: $button-danger-bg-color;
+      opacity: 0.8;
+    }
+  }
+
+  &--danger:active {
+    &:not([disabled]):not(.amber-button-container--text) {
+      transition: 0.1s;
+      background: #dd6161;
+      border-color: #dd6161;
+    }
+  }
+
   &--large {
     min-width: 96px;
     padding: 12px;
+    height: 48px;
   }
 
   &--normal {
@@ -62,6 +128,7 @@
   }
 
   &--small {
+    background: #1A9DFF;
     min-width: 58px;
     padding: 4px;
   }
@@ -73,42 +140,82 @@
     &--primary {
       color: $button-primary-bg-color;
     }
-    &--default {
-      color: $button-default-color;
-    }
-    &--warning {
-      color: $button-warning-bg-color;
-    }
-    &--danger {
-      color: $button-danger-bg-color;
-    }
-  }
-  &--circle {
-    &--large{
-      width: 100px;
-      height:100px;
-    }
-    &--normal{
-      width: 80px;
-      height:80px
-    }
-    &--small{
-      width: 60px;
-      height: 60px;
-    }
-  }
-  &--plain {
-    &--primary {
+    &--primary:hover {
+      background-color: #F7F8FA;
+      border-color: transparent;
       color: $button-primary-bg-color;
     }
     &--default {
       color: $button-default-color;
     }
+    &--default:hover {
+      background-color: #F7F8FA;
+      border-color: transparent;
+      color: $button-default-color;
+    }
     &--warning {
+      color: $button-warning-bg-color;
+    }
+    &--warning:hover {
+      background-color: #F7F8FA;
+      border-color: transparent;
       color: $button-warning-bg-color;
     }
     &--danger {
       color: $button-danger-bg-color;
+    }
+    &--danger:hover {
+      background-color: #F7F8FA;
+      border-color: transparent;
+      color: $button-danger-bg-color;
+    }
+  }
+
+  &--plain {
+    &--primary {
+      color: $button-primary-bg-color;
+    }
+
+    &--primary:hover {
+      transition: .1s;
+      color: $button-primary-bg-color !important;
+    }
+
+    &--primary:active {
+      background: #E6E6E6 !important;
+    }
+
+    &--default {
+      color: $button-default-color;
+    }
+
+    &--default:active {
+      background: #E6E6E6 !important;
+    }
+
+    &--warning {
+      color: $button-warning-bg-color;
+    }
+    &--warning:hover {
+      transition: .1s;
+      color: $button-warning-bg-color !important;
+    }
+
+    &--warning:active {
+      background: #E6E6E6 !important;
+    }
+
+    &--danger {
+      color: $button-danger-bg-color;
+    }
+
+    &--danger:hover {
+      transition: .1s;
+      color: $button-danger-bg-color !important;
+    }
+
+    &--danger:active {
+      background: #E6E6E6 !important;
     }
   }
 
@@ -124,9 +231,11 @@
   	-webkit-animation: 1s spin linear infinite;
   	animation: 1s spin linear infinite;
   }
+
   & + .amber-button-container{
-    margin-left: 5px;
+    margin-left: 15px;
   }
+
 }
 
 @-webkit-keyframes spin {

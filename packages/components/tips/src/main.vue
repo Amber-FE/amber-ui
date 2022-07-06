@@ -1,9 +1,11 @@
 <template>
   <div class="amber-tips-container">
-    <span class="amber-tips-container-wrapper">
-      <AmberIcon class="amber-tips-container-wrapper--color" :iconClass="iconClass" />
-      <span>{{ text }}</span>
-    </span>
+    <div :class="className">
+      <span :class="className + '-wrapper'" class="wrapper">
+        <AmberIcon :class="className + '-wrapper--color'" :iconClass="`${iconMap[type]}`" />
+        <span>{{ text }}</span>
+      </span>
+    </div>
   </div>
 </template>
 <script>
@@ -20,23 +22,29 @@ export default {
       required: true
     },
     type: {
-      type: String,
+      type: String, // "tips" || "success" || "warning" || "danger",
       default: () => {
         return 'warning'
       }
-    },
-    iconColor: {
-      type: String,
-      default: () => {
-        return '#ED6A0C'
+    }
+  },
+  data() {
+    return {
+      iconMap: {
+        tips: 'a-xingzhuangjiehe3x',
+        success: 'a-check-circle-owancheng-xianbeifen2x',
+        warning: 'a-xingzhuangjiehe2x',
+        danger: 'error'
       }
-    },
-    iconClass: {
-      // 宽度
-      type: String,
-      default: () => {
-        return 'a-xingzhuangjiehe2x'
+    }
+  },
+  computed: {
+    className() {
+      const className = []
+      if (this.type) {
+        className.push(`amber-tips-container-${this.type}`)
       }
+      return className
     }
   }
 }
