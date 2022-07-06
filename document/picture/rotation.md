@@ -1,7 +1,8 @@
-# Rotation 图片无限滚动
+# Rotation 
   图片无限滚动
 
 ### 示例
+
 
 ::: demo
 ```html
@@ -20,22 +21,22 @@
     data() {
       return {
         list: [{
-          url: '/1.png',
+          url: '/amber-ui/1.png',
           name: '1.png'
         },{
-          url: '/2.png',
+          url: '/amber-ui/2.png',
            name: '2.png'
         },{
-          url: '/3.png',
+          url: '/amber-ui/3.png',
            name: '3.png'
         },{
-          url: '/4.png',
+          url: '/amber-ui/4.png',
            name: '4.png'
         },{
-          url: '/5.png',
+          url: '/amber-ui/5.png',
            name: '5.png'
         },{
-          url: '/6.png',
+          url: '/amber-ui/6.png',
            name: '6.png'
         }]
       }
@@ -50,8 +51,7 @@
 </script>
 
 ```
-::: 
-
+:::
 ### PictureRotation Attributes
 
 
@@ -72,4 +72,5 @@
 | --- | ---  | --- |  
 | callback| 图片点击回调| 选中图片的值 |
 | handleBigImgCallback| 大图点击回调| 选中图片的值 |
+
 

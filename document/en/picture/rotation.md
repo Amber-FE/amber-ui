@@ -2,9 +2,9 @@
   图片无限滚动
 
 ### 示例
-<AmberPictureRotation :width="1000" :gap-width="65" :img-width="250" :img-height="200" :big-height="240" @handleBigImgCallback="handlePictureStretchClick" @callback="handlePictureStretchClick" :picture-list="list" />
 
-### 代码
+
+::: demo
 ```html
   <AmberPictureRotation 
     :picture-list="list" 
@@ -21,38 +21,23 @@
     data() {
       return {
         list: [{
-          url: '/1.jpg',
-          name: '1.jpg'
+          url: '/amber-ui/1.png',
+          name: '1.png'
         },{
-          url: '/2.jpg',
-           name: '2.jpg'
+          url: '/amber-ui/2.png',
+           name: '2.png'
         },{
-          url: '/3.jpg',
-           name: '3.jpg'
+          url: '/amber-ui/3.png',
+           name: '3.png'
         },{
-          url: '/4.jpg',
-           name: '4.jpg'
+          url: '/amber-ui/4.png',
+           name: '4.png'
         },{
-          url: '/5.jpg',
-           name: '5.jpg'
+          url: '/amber-ui/5.png',
+           name: '5.png'
         },{
-          url: '/6.jpg',
-           name: '6.jpg'
-        },{
-          url: '/7.jpg',
-           name: '7.jpg'
-        },{
-          url: '/8.jpg',
-           name: '8.jpg'
-        },{
-          url: '/9.jpg',
-           name: '9.jpg'
-        },{
-          url: '/10.jpg',
-           name: '10.jpg'
-        },{
-          url: '/11.jpg',
-           name: '11.jpg'
+          url: '/amber-ui/6.png',
+           name: '6.png'
         }]
       }
     },
@@ -66,7 +51,7 @@
 </script>
 
 ```
-
+:::
 ### PictureRotation Attributes
 
 
@@ -88,50 +73,4 @@
 | callback| 图片点击回调| 选中图片的值 |
 | handleBigImgCallback| 大图点击回调| 选中图片的值 |
 
-<script>
-  export default {
-    data() {
-      return {
-        list: [{
-          url: '/1.jpg',
-          name: '1.jpg'
-        },{
-          url: '/2.jpg',
-           name: '2.jpg'
-        },{
-          url: '/3.jpg',
-           name: '3.jpg'
-        },{
-          url: '/4.jpg',
-           name: '4.jpg'
-        },{
-          url: '/5.jpg',
-           name: '5.jpg'
-        },{
-          url: '/6.jpg',
-           name: '6.jpg'
-        },{
-          url: '/7.jpg',
-           name: '7.jpg'
-        },{
-          url: '/8.jpg',
-           name: '8.jpg'
-        },{
-          url: '/9.jpg',
-           name: '9.jpg'
-        },{
-          url: '/10.jpg',
-           name: '10.jpg'
-        },{
-          url: '/11.jpg',
-           name: '11.jpg'
-        }]
-      }
-    },
-    methods: {
-      handlePictureStretchClick(item) {
-        console.log(item)
-      }
-    }
-  };
-</script>
+

@@ -1,4 +1,4 @@
-# Preview 图片预览
+# Preview 
   图片预览
 
 ::: demo
@@ -19,17 +19,17 @@
         display: false,
         imageIndex: 0,
         list: [{
-          url: '/1.jpg',
-          name: '1.jpg'
+          url: '/amber-ui/1.png',
+          name: '1.png'
         },{
-          url: '/2.jpg',
-           name: '2.jpg'
+          url: '/amber-ui/2.png',
+           name: '2.png'
         },{
-          url: '/3.jpg',
-           name: '3.jpg'
+          url: '/amber-ui/3.png',
+           name: '3.png'
         },{
-          url: '/4.jpg',
-           name: '4.jpg'
+          url: '/amber-ui/4.png',
+           name: '4.png'
         }]
       }
     },
@@ -56,4 +56,5 @@
 | 事件名称 | 说明 | 回调参数 | 
 | --- | ---  | --- |  
 | close| 大图关闭 | - |
+
 

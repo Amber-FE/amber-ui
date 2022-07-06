@@ -1,8 +1,10 @@
-# Stretch 可伸缩列表
+# Stretch 
   可伸缩图片列表
 
+### 示例
+
 ::: demo
-``` html
+```html
   <AmberPictureStretch 
     :picture-list="list" 
     :img-width="250" 
@@ -17,17 +19,17 @@
     data() {
       return {
         list: [{
-          url: '/1.png'
+          url: '/amber-ui/1.png'
         },{
-          url: '/2.png'
+          url: '/amber-ui/2.png'
         },{
-          url: '/3.png'
+          url: '/amber-ui/3.png'
         },{
-          url: '/4.png'
+          url: '/amber-ui/4.png'
         },{
-          url: '/5.png'
+          url: '/amber-ui/5.png'
         },{
-          url: '/6.png'
+          url: '/amber-ui/6.png'
         }]
       }
     },
@@ -40,8 +42,7 @@
 </script>
 
 ```
-::: 
-
+:::
 ### PictureStretch Attributes
 
 
@@ -58,5 +59,4 @@
 | 事件名称 | 说明 | 回调参数 | 
 | --- | ---  | --- |  
 | callback| 图片点击回调| 选中图片的值 |
-
 

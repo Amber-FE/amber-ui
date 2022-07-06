@@ -2,16 +2,15 @@
   可伸缩图片列表
 
 ### 示例
-<AmberPictureStretch :img-width="250" :img-height="180" :gap-width="75" :transition-time="0.5" @callback="handlePictureStretchClick" :picture-list="list" />
 
-### 代码
+::: demo
 ```html
   <AmberPictureStretch 
     :picture-list="list" 
-    img-width="250" 
-    img-height="180" 
-    gap-width="80" 
-    transition-time="0.5" 
+    :img-width="250" 
+    :img-height="180" 
+    :gap-width="80" 
+    :transition-time="0.5" 
     @callback="handlePictureStretchClick" 
   />
 
@@ -20,17 +19,17 @@
     data() {
       return {
         list: [{
-          url: '/1.jpg'
+          url: '/amber-ui/1.png'
         },{
-          url: '/2.jpg'
+          url: '/amber-ui/2.png'
         },{
-          url: '/3.jpg'
+          url: '/amber-ui/3.png'
         },{
-          url: '/4.jpg'
+          url: '/amber-ui/4.png'
         },{
-          url: '/5.jpg'
+          url: '/amber-ui/5.png'
         },{
-          url: '/6.jpg'
+          url: '/amber-ui/6.png'
         }]
       }
     },
@@ -43,7 +42,7 @@
 </script>
 
 ```
-
+:::
 ### PictureStretch Attributes
 
 
@@ -61,31 +60,3 @@
 | --- | ---  | --- |  
 | callback| 图片点击回调| 选中图片的值 |
 
-<script>
-  export default {
-    data() {
-      return {
-        list: [{
-          url: '/1.jpg'
-        },{
-          url: '/2.jpg'
-        },{
-          url: '/3.jpg'
-        },{
-          url: '/4.jpg'
-        },{
-          url: '/5.jpg'
-        },{
-          url: '/6.jpg'
-        },{
-          url: '/7.jpg'
-        }]
-      }
-    },
-    methods: {
-      handlePictureStretchClick(item) {
-        alert(JSON.stringify(item))
-      }
-    }
-  };
-</script>

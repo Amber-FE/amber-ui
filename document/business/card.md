@@ -26,7 +26,7 @@
     props:{
         datalist: {
         default: ()=>({
-          img_url: 'http://121.37.6.129:9999/media/drug/1654845804001001026/0.jpg?1',
+          img_url: '/amber-ui/drug.jpg',
         popname: 'mj金银花003（金-单）',
         specpack: '0.5kg',
         wholenum: 400,
@@ -73,7 +73,7 @@
     props:{
         datalist: {
         default: ()=>([{
-          img_url: 'http://121.37.6.129:9999/media/drug/1654845804001001026/0.jpg?1',
+          img_url: '/amber-ui/drug.jpg',
         popname: 'mj金银花003（金-单）',
         specpack: '0.5kg',
         wholenum: 400,
@@ -86,7 +86,7 @@
         labelNames: ['满减', '满赠'],
         zs: '金银花'
         },{
-          img_url: 'http://121.37.6.129:9999/media/drug/1654845804001001026/0.jpg?1',
+          img_url: '/amber-ui/drug.jpg',
         popname: 'mj金银花003（金-单）',
         specpack: '0.5kg',
         wholenum: 400,
