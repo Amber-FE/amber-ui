@@ -1,14 +1,14 @@
 <p align="center">
-  <a href="https://amber.onekdrug.com/">
+  <a href="https://amber-fe.github.io/amber-ui/">
     <img  src="./document/.vuepress/public/logo.png">
   </a>
 </p>
 
 <h1 align="center"> 
-  <a href="https://amber.onekdrug.com/" target="_blank">amber-ui</a>
+  <a href="https://amber-fe.github.io/amber-ui/" target="_blank">amber-ui</a>
 </h1>
 
-[![](https://github.com/Amber-FE/amber-ui/blob/main/document/.vuepress/public/default.png)](https://amber.onekdrug.com/)
+[![](https://github.com/Amber-FE/amber-ui/blob/main/document/.vuepress/public/default.png)](https://amber-fe.github.io/amber-ui/)
 
 English | [简体中文](./README.md)
 ## Features
@@ -54,5 +54,5 @@ If you are in a bad network environment，you can try other registries and tools
 ```
 ## Links
 
-- [Home page](https://amber.onekdrug.com/)
+- [Home page](https://amber-fe.github.io/amber-ui/)
 - [Vue](https://cn.vuejs.org/)

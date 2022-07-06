@@ -1,14 +1,14 @@
 <p align="center">
-  <a href="https://amber.onekdrug.com/">
+  <a href="https://amber-fe.github.io/amber-ui/">
     <img  src="./document/.vuepress/public/logo.png">
   </a>
 </p>
 
 <h1 align="center"> 
-  <a href="https://amber.onekdrug.com/" target="_blank">amber-ui</a>
+  <a href="https://amber-fe.github.io/amber-ui/" target="_blank">amber-ui</a>
 </h1>
 
-[![](https://github.com/Amber-FE/amber-ui/blob/main/document/.vuepress/public/default.png)](https://amber.onekdrug.com/)
+[![](https://github.com/Amber-FE/amber-ui/blob/main/document/.vuepress/public/default.png)](https://amber-fe.github.io/amber-ui/)
 
  简体中文 | [English](./README-en-US.md)
 ## 特性
@@ -54,5 +54,5 @@ $ yarn add amber-ui
 ```
 ## 链接
 
-- [首页](https://amber.onekdrug.com/)
+- [首页](https://amber-fe.github.io/amber-ui/)
 - [Vue 官方文档](https://cn.vuejs.org/)
