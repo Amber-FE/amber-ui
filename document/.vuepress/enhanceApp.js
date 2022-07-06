@@ -4,7 +4,7 @@ import '../../themes/components/index.scss'
 import icon from './icon.json';
 
 
-export default ({ Vue, options, router, siteData }) => {
+export default ({ Vue, options, router, siteData,isServer }) => {
   Vue.prototype.$icon = icon
   if(!isServer) {
     Vue.mixin({

@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://amber.onekdrug.com/">
-    <img  src="./docs/.vuepress/public/logo.png">
+    <img  src="./document/.vuepress/public/logo.png">
   </a>
 </p>
 
