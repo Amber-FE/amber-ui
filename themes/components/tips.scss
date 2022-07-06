@@ -1,22 +1,64 @@
 .amber-tips-container {
   height: 48px;
-  background: #FFF5ED;
-  border-radius: 2px;
-  border: 1px solid var(--color-warning);
   line-height: 48px;
   padding: 0 16px;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 
-  &-wrapper {
+  .wrapper {
     // .p-size(50px, 50px, 16px, left, 30px, #ed2f26);
     // display: inline-block;
     font-size: 14px;
     font-family: PingFangSC-Regular, PingFang SC;
     font-weight: 400;
     color: #323233;
+    padding-left: 14px;
+  }
 
-    &--color {
-      color: var(--color-warning);
+  &-tips {
+    background-color: #EDF4FF;
+    border: 1px solid rgb(27, 157, 255);
+    border-radius: 2px;
+    &-wrapper {
+      &--color {
+        color: #1B9DFF;
+        margin: 0 5px -4px 0;
+      }
+    }
+  }
+
+  &-success {
+    background-color: #F0FAF2;
+    border: 1px solid rgb(159, 214, 168);
+    border-radius: 2px;
+    &-wrapper {
+      &--color {
+        color: #2DA641;
+        margin: 0 5px -4px 0;
+      }
+    }
+  }
+
+  &-warning {
+    background-color: #FFF5ED;
+    border: 1px solid rgb(241, 146, 78);
+    border-radius: 2px;
+    &-wrapper {
+      &--color {
+        color: #ED6A0C;
+        margin: 0 5px -4px 0;
+      }
+    }
+  }
+
+  &-danger {
+    background-color: #FFEBEB;
+    border: 1px solid rgb(223, 69, 69);
+    border-radius: 2px;
+    &-wrapper {
+      &--color {
+        color: #D40000;
+        margin: 0 5px -4px 0;
+      }
     }
   }
 }

@@ -5,10 +5,10 @@
 ### 基础用法
 ::: demo
 ```html
-<AmberTag>默认</AmberTag>
-<AmberTag type="primary">主色</AmberTag>
-<AmberTag type="warning">提示色</AmberTag>
-<AmberTag type="danger">警告色</AmberTag>
+<amber-tag>默认</amber-tag>
+<amber-tag type="primary">主色</amber-tag>
+<amber-tag type="warning">提示色</amber-tag>
+<amber-tag type="danger">警告色</amber-tag>
 
 ```
 :::
@@ -16,10 +16,10 @@
 ### 可移除标签
 ::: demo
 ```html
-<AmberTag closable>默认</AmberTag>
-<AmberTag type="primary" closable>主色</AmberTag>
-<AmberTag type="warning" closable>提示色</AmberTag>
-<AmberTag type="danger" closable>警告色</AmberTag>
+<amber-tag closable>默认</amber-tag>
+<amber-tag type="primary" closable>主色</amber-tag>
+<amber-tag type="warning" closable>提示色</amber-tag>
+<amber-tag type="danger" closable>警告色</amber-tag>
 
 ```
 :::
@@ -30,9 +30,9 @@
 
 ::: demo
 ```html
-<AmberTag type="primary" closable>默认中等标签</AmberTag>
-<AmberTag type="primary" size="small" closable>小型标签</AmberTag>
-<AmberTag size="mini" type="primary" closable>超小标签</AmberTag>
+<amber-tag type="primary" closable>默认中等标签</amber-tag>
+<amber-tag type="primary" size="small" closable>小型标签</amber-tag>
+<amber-tag size="mini" type="primary" closable>超小标签</amber-tag>
 
 ```
 :::
@@ -43,16 +43,16 @@
 
 ::: demo
 ```html
-<AmberTag effect="dark" closable>默认</AmberTag>
-<AmberTag effect="dark" type="primary" closable>主色</AmberTag>
-<AmberTag effect="dark" type="warning" closable>提示色</AmberTag>
-<AmberTag effect="dark" type="danger" closable>警告色</AmberTag>
+<amber-tag effect="dark" closable>默认</amber-tag>
+<amber-tag effect="dark" type="primary" closable>主色</amber-tag>
+<amber-tag effect="dark" type="warning" closable>提示色</amber-tag>
+<amber-tag effect="dark" type="danger" closable>警告色</amber-tag>
 <br />
 <br />
-<AmberTag closable>默认</AmberTag>
-<AmberTag type="primary" closable>主色</AmberTag>
-<AmberTag type="warning" closable>提示色</AmberTag>
-<AmberTag type="danger" closable>警告色</AmberTag>
+<amber-tag closable>默认</amber-tag>
+<amber-tag type="primary" closable>主色</amber-tag>
+<amber-tag type="warning" closable>提示色</amber-tag>
+<amber-tag type="danger" closable>警告色</amber-tag>
 
 ```
 :::
