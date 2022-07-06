@@ -8,7 +8,7 @@
   <a href="https://amber.onekdrug.com/" target="_blank">amber-ui</a>
 </h1>
 
-[![](https://github.com/Amber-FE/amber-ui/blob/main/docs/.vuepress/public/default.png)](https://amber.onekdrug.com/)
+[![](https://github.com/Amber-FE/amber-ui/blob/main/document/.vuepress/public/default.png)](https://amber.onekdrug.com/)
 
  简体中文 | [English](./README-en-US.md)
 ## 特性

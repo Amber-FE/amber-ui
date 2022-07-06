@@ -14,8 +14,8 @@
     "components"
   ],
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
+    "docs:dev": "vuepress dev document",
+    "docs:build": "vuepress build document",
     "build": "npm run build:js && npm run build:css",
     "build:js": "webpack --config ./webpack.components.js",
     "build:css": "npx gulp sass",
