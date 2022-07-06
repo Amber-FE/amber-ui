@@ -57,30 +57,3 @@
 | --- | ---  | --- |  
 | close| 大图关闭 | - |
 
-<script>
-  export default {
-    data() {
-      return {
-        isShow: true,
-        list: [{
-          url: '/1.jpg',
-          name: '1.jpg'
-        },{
-          url: '/2.jpg',
-           name: '2.jpg'
-        },{
-          url: '/3.jpg',
-           name: '3.jpg'
-        },{
-          url: '/4.jpg',
-           name: '4.jpg'
-        }]
-      }
-    },
-    methods: {
-      handlePictureClick() {
-          this.isShow = false;
-      }
-    }
-  };
-</script>

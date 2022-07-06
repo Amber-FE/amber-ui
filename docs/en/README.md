@@ -4,7 +4,7 @@ heroImage: https://www.onekdrug.com/_nuxt/img/33ca385.png
 heroText: Amber UI
 tagline: Lightweight e-commerce component library based on the onekdrug style
 actionText:  Get Started
-actionLink: /guide/start
+actionLink: /en/guide/start
 footer: MIT Licensed | Copyright © 2020-present | Onekdrug's Department of Science and Technology  
 ---
 

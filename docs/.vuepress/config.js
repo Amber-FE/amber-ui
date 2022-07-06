@@ -156,6 +156,9 @@ children: [
 
 module.exports = {
   base: "/",
+  head: [
+    ['link', { rel: 'icon', href: `/logo.png` }],
+  ],
   themeConfig: {
     editLinks: false,
     logoName: "Amber",
@@ -185,9 +188,13 @@ module.exports = {
     // 作为特例，默认语言可以使用 '/' 作为其路径。
     '/': {
       lang: 'en-US', // 将会被设置为 <html> 的 lang 属性
+      title: 'Amber UI',
+      description: '开箱即用的高质量 Vue 组件'
     },
     '/en/': {
       lang: 'zh-CN',
+      title: 'Amber UI',
+      description: 'A set of high-quality Vue components out of the box'
     }
   },
   plugins: ["demo-container"],
