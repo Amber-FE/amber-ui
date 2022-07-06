@@ -71,11 +71,6 @@ export default {
         return false
       }
     },
-    circle: {
-      // 是否圆形按钮
-      type: [Boolean],
-      default: () => false
-    },
     icon: {
       type: String,
       default: () => {
@@ -105,16 +100,12 @@ export default {
         [`${prefix}--${this.size}`]: this.size,
         [`${prefix}--text`]: this.text,
         [`${prefix}--text--${this.type}`]: this.text,
-        [`${prefix}--plain--${this.type}`]: this.plain,
-        [`${prefix}--circle--${this.size}`]: this.circle
+        [`${prefix}--plain--${this.type}`]: this.plain
       }
     }
   },
   methods: {
     getButtonRadius() {
-      if (this.circle) {
-        return '50%'
-      }
       if (this.round) {
         return '25px'
       }
