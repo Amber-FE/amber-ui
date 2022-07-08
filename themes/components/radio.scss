@@ -50,6 +50,7 @@
   cursor: pointer;
 
   &--disabled {
+    pointer-events: none;
     color: var(--color-disabled);
   }
 }

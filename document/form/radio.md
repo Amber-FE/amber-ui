@@ -12,10 +12,10 @@
 </div>
 
 <h4>禁用</h4>
-<div class="radio-item">
-  <amber-radio disabled label="a" v-model="radioValue">单选A</amber-radio>
-  <amber-radio disabled label="b" v-model="radioValue">单选B</amber-radio>
-  <amber-radio disabled label="c" v-model="radioValue">单选C</amber-radio>
+<div class="radio-item1">
+  <amber-radio disabled label="a" v-model="disabledValue">单选A</amber-radio>
+  <amber-radio disabled label="b" v-model="disabledValue">单选B</amber-radio>
+  <amber-radio disabled label="c" v-model="disabledValue">单选C</amber-radio>
 </div>
 
 <h4>按钮组</h4>
@@ -30,7 +30,8 @@
     data() {
       return {
         radioValue: 'a',
-        radioButtonValue: 'a1'
+        radioButtonValue: 'a1',
+        disabledValue: 'c'
       }
     },
     methods: {
