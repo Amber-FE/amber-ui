@@ -1,12 +1,11 @@
 # Tree 
 
-用清晰的层级结构展示信息,可展开或者折叠
+Present information in a clear hierarchy that can be expanded or collapsed
 
-还没写完呢 不要动我代码哈 只可观看不可亵玩！！！
 
-### 基础用法
+### basic
 
-基础的树形结构展示。
+The basic tree structure is shown
 ::: demo
 
 ```html
@@ -18,58 +17,58 @@
       return {
         data: [
           {
-            title: "一级菜单1",
+            label: "menu1",
             expand: true,
             children: [
               {
-                title: "二级菜单1-1",
+                label: "menu1-1",
                 expand: true,
                 children: [
                   {
-                    title: "三级菜单 1-1-1",
+                    label: "menu1-1-1",
                   },
                   {
-                    title: "三级菜单 1-1-2",
+                    label: "menu1-1-2",
                   },
                 ],
               },
               {
-                title: "二级菜单1-2",
+                label: "menu1-2",
                 children: [
                   {
-                    title: "三级菜单 1-2-1",
+                    label: "menu 1-2-1",
                   },
                   {
-                    title: "三级菜单 1-2-1",
+                    label: "menu 1-2-1",
                   },
                 ],
               },
             ],
           },
           {
-            title: "一级菜单2",
+            label: "menu2",
             expand: true,
             children: [
               {
-                title: "二级菜单2-1",
+                label: "menu2-1",
                 expand: true,
                 children: [
                   {
-                    title: "三级菜单 2-1-1",
+                    label: "menu 2-1-1",
                   },
                   {
-                    title: "三级菜单 2-1-2",
+                    label: "menu 2-1-2",
                   },
                 ],
               },
               {
-                title: "二级菜单2-2",
+                label: "menu2-2",
                 children: [
                   {
-                    title: "三级菜单 3-2-1",
+                    label: "menu 3-2-1",
                   },
                   {
-                    title: "三级菜单 3-2-1",
+                    label: "menu 3-2-2",
                   },
                 ],
               },
@@ -84,75 +83,152 @@
 
 :::
 
-### 可选择
+### Multiple Choices(checkbox)
 
-适用于需要选择层级时使用。
+Set the attribute show-checkbox to check data. To check data, multiple must be enabled 
+
 ::: demo
 
 ```html
-<amber-tree :data="data" show-checkbox></amber-tree>
+<amber-tree :data="data" show-checkbox multiple></amber-tree>
 
 <script>
-  /**
-   *
-   */
   export default {
     data() {
       return {
         data: [
           {
-            title: "一级菜单1",
+            label: "menu1",
             expand: true,
             children: [
               {
-                title: "二级菜单1-1",
+                label: "menu1-1",
                 expand: true,
                 children: [
                   {
-                    title: "三级菜单 1-1-1",
+                    label: "menu1-1-1",
                   },
                   {
-                    title: "三级菜单 1-1-2",
+                    label: "menu1-1-2",
                   },
                 ],
               },
               {
-                title: "二级菜单1-2",
+                label: "menu1-2",
                 children: [
                   {
-                    title: "三级菜单 1-2-1",
+                    label: "menu 1-2-1",
                   },
                   {
-                    title: "三级菜单 1-2-1",
+                    label: "menu 1-2-1",
                   },
                 ],
               },
             ],
           },
           {
-            title: "一级菜单2",
+            label: "menu2",
             expand: true,
             children: [
               {
-                title: "二级菜单2-1",
+                label: "menu2-1",
                 expand: true,
                 children: [
                   {
-                    title: "三级菜单 2-1-1",
+                    label: "menu 2-1-1",
                   },
                   {
-                    title: "三级菜单 2-1-2",
+                    label: "menu 2-1-2",
                   },
                 ],
               },
               {
-                title: "二级菜单2-2",
+                label: "menu2-2",
                 children: [
                   {
-                    title: "三级菜单 3-2-1",
+                    label: "menu 3-2-1",
                   },
                   {
-                    title: "三级菜单 3-2-1",
+                    label: "menu 3-2-2",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      };
+    },
+  };
+</script>
+```
+
+:::
+### Multiple Choices
+Setting the multiple attribute enables tree selection with multiple selections
+
+::: demo
+
+```html
+<amber-tree :data="data"  multiple></amber-tree>
+
+<script>
+  export default {
+    data() {
+      return {
+        data: [
+          {
+            label: "menu1",
+            expand: true,
+            children: [
+              {
+                label: "menu1-1",
+                expand: true,
+                children: [
+                  {
+                    label: "menu1-1-1",
+                  },
+                  {
+                    label: "menu1-1-2",
+                  },
+                ],
+              },
+              {
+                label: "menu1-2",
+                children: [
+                  {
+                    label: "menu 1-2-1",
+                  },
+                  {
+                    label: "menu 1-2-1",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            label: "menu2",
+            expand: true,
+            children: [
+              {
+                label: "menu2-1",
+                expand: true,
+                children: [
+                  {
+                    label: "menu 2-1-1",
+                  },
+                  {
+                    label: "menu 2-1-2",
+                  },
+                ],
+              },
+              {
+                label: "menu2-2",
+                children: [
+                  {
+                    label: "menu 3-2-1",
+                  },
+                  {
+                    label: "menu 3-2-2",
                   },
                 ],
               },
@@ -167,8 +243,23 @@
 
 :::
 
-### Attributes 参数
+### Attributes 
 
-| 参数          | 说明             | 类型    | 默认值 |
+| param         | explain             | type    | default |
 | ------------- | ---------------- | ------- | ------ |
-| show-checkbox | 节点是否可被选择 | boolean | false  |
+| show-checkbox |Whether to display multiple boxes | boolean | false  |
+| multiple | Whether alternative | Boolean | false |
+| data | tree data | Array | --  |
+| childrenKey | The name of the data neutron node | String | 'children'  |
+| v-width | Tree Indicates the width of the selector  | String | '240px'  |
+| defaultLabel | The value of the default radio option | String | ''  |
+| defaultCheckList | Default multiple values | Array | []  |
+
+
+
+### Event
+
+| event        | explain            | return |
+| ------------- | ---------------- | ------- | 
+| onChange | the selected value changes | selected value | 
+

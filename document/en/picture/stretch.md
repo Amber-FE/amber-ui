@@ -1,7 +1,7 @@
-# Stretch 
-  可伸缩图片列表
+# Stretch   
+  List of scalable images
 
-### 示例
+### example
 
 ::: demo
 ```html
@@ -46,17 +46,17 @@
 ### PictureStretch Attributes
 
 
-| 参数 | 说明 | 类型 | 是否必要 | 默认值 |
+| param | explain | type | necessary | default |
 | --- | ---  | --- |  ---    | --- |
-| gap-width | 图片间隙 | number | 否 | 96px |
-| img-width | 图片宽度 | number | 否 | 303px |
-| img-height | 图片高度 | number | 否 | 204px |
-| transition-time | 动画时间 | number | 否 | 0.3s |
-| picture-list | 图片列表 | Array | 是 | - |
+| gap-width | Image gap | number | no | 96px |
+| img-width | width | number | no | 303px |
+| img-height | height | number | no | 204px |
+| transition-time | animation time | number | no | 0.3s |
+| picture-list | image list | Array | yes | - |
 
 
 ### PictureStretch Events
-| 事件名称 | 说明 | 回调参数 | 
+| event | explain | params | 
 | --- | ---  | --- |  
-| callback| 图片点击回调| 选中图片的值 |
+| callback| Picture click callback| Select the value of the picture |
 

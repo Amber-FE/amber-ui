@@ -1,24 +1,48 @@
 <template>
-  <div class="amber-tree">
+  <div class="amber-tree-node">
     <!-- 一级 -->
-    <div class="amber-tree-box">
-      <div class="amber-tree-firstManu" @click="isOpenHandle(1)">
+    <div class="amber-tree-node-box">
+      <div class="amber-tree-firstMenu" @click.stop="isOpenHandle(1)">
         <!-- 一级菜单 -->
-        <span class="amber-tree-firstManu-icon" type="checkbox">
-          <amber-icon v-if="!isOpen" icon-class="xiangyou" />
-          <amber-icon v-if="isOpen" icon-class="xiangxia" />
+        <span class="amber-tree-firstMenu-icon" type="checkbox">
+          <amber-icon class="amber-tree-node-label" v-if="!isOpen" icon-class="jiantou_right" />
+          <amber-icon class="amber-tree-node-label" v-if="isOpen" icon-class="jiantou_down" />
         </span>
-        <input v-if="showCheckbox" type="checkbox" />
-        <span>{{ data.title }}</span>
+        <!-- <input v-if="showCheckbox" type="checkbox" class="amber-tree-checkbox" />
+         -->
+        <span
+          v-if="!showCheckbox && !multiple"
+          @click.stop="onClick"
+          class="amber-tree-node-label"
+          >{{ data.label }}</span
+        >
+        <span
+          v-if="!showCheckbox && multiple"
+          @click.stop="onClick"
+          class="amber-tree-node-label"
+          >{{ data.label }}</span
+        >
+        <amber-checkbox
+          :label="data.label"
+          :checked="data.checked"
+          @change="onChange()"
+          v-if="showCheckbox && multiple"
+        >
+        </amber-checkbox>
       </div>
       <!-- 展开 -->
-      <amber-tree-node
-        :class="[isOpen ? 'amber-open-node' : 'amber-close-node', 'amber-tree-seconedManu']"
-        v-for="(item, index) in data.children"
-        :key="index"
-        :data="item"
-        :show-checkbox="showCheckbox"
-      />
+      <div>
+        <amber-tree-node
+          :class="[isOpen ? 'amber-open-node' : 'amber-close-node', 'amber-tree-seconedMenu']"
+          v-for="(item, index) in children"
+          :key="index"
+          :data="item"
+          :show-checkbox="showCheckbox"
+          @onClick.stop="onClick"
+          @onChange="onChange()"
+          :multiple="multiple"
+        />
+      </div>
 
       <!-- <div
         :class="[
@@ -38,18 +62,16 @@
 
 <script>
 import AmberIcon from '../../icon/index'
+import AmberCheckbox from '../../checkbox'
 
 export default {
   name: 'AmberTreeNode',
   components: {
-    AmberIcon
+    AmberIcon,
+    AmberCheckbox
   },
   // 向外暴露的属性
   props: {
-    title: {
-      default: '',
-      type: String
-    },
     data: {
       type: Object,
       default() {
@@ -59,6 +81,14 @@ export default {
     showCheckbox: {
       type: Boolean,
       default: false
+    },
+    childrenKey: {
+      type: String,
+      default: 'children'
+    },
+    multiple: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
@@ -66,7 +96,18 @@ export default {
       isOpen: false
     }
   },
+  computed: {
+    children() {
+      return this.data[this.childrenKey]
+    }
+  },
   methods: {
+    onChange(e) {
+      this.$emit('onChange', e)
+    },
+    onClick(e) {
+      this.$emit('onClick', e)
+    },
     // 是否展开或者关闭
     isOpenHandle(val) {
       if (val === 1) {

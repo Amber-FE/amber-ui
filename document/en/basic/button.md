@@ -1,8 +1,8 @@
-# Button 按钮
+# Button 
 
 Commonly used action buttons.
 
-### 按钮大小
+### size
 There are three types of button sizes
 - Large button
 - Medium button（default）
@@ -16,7 +16,7 @@ There are three types of button sizes
 ```
 :::
 
-### 按钮宽度自适应
+### Button width adaptive
 The side-by-side button can be used in two ways:
 - According to the text content, the button width is adaptive:
   Small buttons have a fixed spacing of 8px; medium buttons are 16px; large buttons are 24px.
@@ -90,7 +90,7 @@ The side-by-side button can be used in two ways:
 <h4>加载状态</h4>
 <amber-button @click="click" loading type="primary"></amber-button> -->
 
-### 禁用状态
+### disabled
 ::: demo
 ```html
 <amber-button plain="true" type="default" disabled>Plain button</amber-button>
@@ -109,7 +109,7 @@ The side-by-side button can be used in two ways:
     },
     methods: {
       click() {
-        console.log('按钮点击')
+        console.log('click')
       }
     }
   }
@@ -120,13 +120,13 @@ The side-by-side button can be used in two ways:
 
 ### API
 
-| 字段     | 说明                                                                        | 类型    | 默认值 |
+| field     | explain                                                                        | type    | default |
 | -------- | --------------------------------------------------------------------------- | ------- | ------ |
-| type     | 按钮类型，可选类型包含：default、primary、warning、danger                   | String  | -      |
-| size     | 按钮大小为三种类型 small、normal、large                                     | String  | normal |
-| disabled | 禁用按钮，禁用状态下按钮不可点击。                                          | Boolean | false  |
-| plain    | 通过 plain 属性将按钮设置为朴素按钮，朴素按钮的文字为按钮颜色，背景为白色。 | Boolean | false  |
-| text     | 是否是单纯的文字按钮                                                        | Boolean | false  |
-| icon     | 按钮前的图标，参考 Icon 组件                                                | String  | -      |
-| color    | 自定义颜色，包含文字与图片颜色                                              | String  | -      |
-| loading  | 加载状态                                                                    | Boolean | false  |
+| type     | The value can be Default, Primary, Warning, or Danger                   | String  | -      |
+| size     | There are three types of button sizes: Small, Normal, and large                                   | String  | normal |
+| disabled | Disable button. In the disabled state, the button cannot be clicked.                                          | Boolean | false  |
+| plain    | Use the plain property to set the button to a plain button, whose text is the color of the button and whose background is white 。 | Boolean | false  |
+| text     | Is it just a text button                                                     | Boolean | false  |
+| icon     | For the Icon before the button, refer to the Icon component                                               | String  | -      |
+| color    | The Icon before the button, refer to the Icon component to customize the color, including text and picture colors                                              | String  | -      |
+| loading  | loading state                                                                  | Boolean | false  |

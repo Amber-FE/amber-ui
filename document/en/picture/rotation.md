@@ -1,7 +1,7 @@
-# Rotation 
-  图片无限滚动
+# Rotation  
+  Picture scrolling
 
-### 示例
+### example
 
 
 ::: demo
@@ -55,22 +55,22 @@
 ### PictureRotation Attributes
 
 
-| 参数 | 说明 | 类型 | 是否必要 | 默认值 |
+| params | explain | type | necessary | default |
 | --- | ---  | --- |  ---    | --- |
-| width | 宽度 | number | 否 | 960px |
-| height | 高度 | number | 否 | 300px |
-| gap-width | 图片间隙 | number | 否 | 88px |
-| big-width | 大图宽度 | number | 否 | 600px |
-| big-height | 大图高度 | number | 否 | 250px |
-| img-width | 图片宽度 | number | 否 | 300px |
-| img-height | 图片高度 | number | 否 | 226px |
-| picture-list | 图片列表 | Array | 是 | - |
+| width | width | number | no | 960px |
+| height | height | number | no | 300px |
+| gap-width | Image gap | number | no | 88px |
+| big-width | big image width | number | no | 600px |
+| big-height | big image height | number | no | 250px |
+| img-width | image width | number | no | 300px |
+| img-height | image height | number | no | 226px |
+| picture-list | image list | Array | yes | - |
 
 
 ### PictureRotation Events
-| 事件名称 | 说明 | 回调参数 | 
+| event | explain | params | 
 | --- | ---  | --- |  
-| callback| 图片点击回调| 选中图片的值 |
-| handleBigImgCallback| 大图点击回调| 选中图片的值 |
+| callback| Picture click callback| Picture click callback value |
+| handleBigImgCallback| big picture click callback| Picture click callback value |
 
 
