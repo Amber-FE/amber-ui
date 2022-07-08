@@ -2,8 +2,8 @@
     display: flex;
     align-items: center;
     height: 2px;
-    background-color: #00f;
-    margin: 10px 0;
+    background-color: #ccc;
+    margin: 8px 0;
     white-space: nowrap;
     &-text {
         background: #fff;
@@ -19,7 +19,7 @@
     background: #fff;
     border-style: dashed;
     border-width: 2px 0px 0px;
-    border-color: #00f;
+    border-color: #ccc;
 }
 .vertical.dashed {
     border-width: 0 0 0 2px;
@@ -44,4 +44,3 @@
 .right::after,.left::before {
     flex: 1;
 }
-
