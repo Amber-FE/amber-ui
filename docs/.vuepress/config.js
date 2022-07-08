@@ -48,6 +48,8 @@ const Sidebar4EN =  [
     collapsable: false, // 可选的, 默认值是 true,
     children: [
       "/en/basic/container",
+      "/en/basic/color",
+      "/en/basic/font",
       "/en/basic/grid",
       "/en/basic/icon",
       "/en/basic/button",
@@ -108,6 +110,8 @@ const Sidebar4ZH = [
     collapsable: false, // 可选的, 默认值是 true,
     children: [
       "/basic/container",
+      "/basic/color",
+      "/basic/font",
       "/basic/grid",
       "/basic/icon",
       "/basic/button",
