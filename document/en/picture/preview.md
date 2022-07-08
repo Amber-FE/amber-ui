@@ -1,10 +1,11 @@
-# Preview 
-  图片预览
-
+# Preview  
+  picture preview
+  
 ::: demo
 ```html
-  <amber-button type="primary" @click="imageIndex = 0, display = true">预览图片</amber-button>
-  <amber-button type="primary" @click="() => { imageIndex = 1, display = true }">预览第2张图片</amber-button>
+  <amber-button type="primary" @click="imageIndex = 0, display = true">   preview pictures
+</amber-button>
+  <amber-button type="primary" @click="() => { imageIndex = 1, display = true }">preview the second picture</amber-button>
   <amber-picture-preview 
     :show="display" 
     @close="handlePictureClick" 
@@ -46,15 +47,15 @@
 ### Attributes
 
 
-| 参数 | 说明 | 类型 | 是否必要 | 默认值 |
+| params | explain | type | necessary | default |
 | --- | ---  | --- |  ---    | --- |
-| show | 是否展示预览图片 | boolean | 否 | false |
-| picture-list | 图片列表 | Array | 是 | - |
+| show | Whether to show preview images | boolean | no | false |
+| picture-list | image list | Array | yes | - |
 
 
 ### Events
-| 事件名称 | 说明 | 回调参数 | 
+| event | explain | callback params | 
 | --- | ---  | --- |  
-| close| 大图关闭 | - |
+| close| big image close callback | - |
 
 

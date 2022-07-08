@@ -49,7 +49,6 @@ const Sidebar4EN =  [
     children: [
       "/en/basic/container",
       "/en/basic/color",
-      "/en/basic/font",
       "/en/basic/grid",
       "/en/basic/icon",
       "/en/basic/button",
@@ -111,7 +110,6 @@ const Sidebar4ZH = [
     children: [
       "/basic/container",
       "/basic/color",
-      "/basic/font",
       "/basic/grid",
       "/basic/icon",
       "/basic/button",
