@@ -61,7 +61,8 @@ const Sidebar4EN =  [
       "/en/basic/divider",
       "/en/basic/notification",
       "/en/basic/tree",
-      "/en/basic/infinitescroll"
+      "/en/basic/infinitescroll",
+      "/en/basic/pagination"
     ],
   },
 {
@@ -122,7 +123,8 @@ const Sidebar4ZH = [
       "/basic/divider",
       "/basic/notification",
       "/basic/tree",
-      "/basic/infinitescroll"
+      "/basic/infinitescroll",
+      "/basic/pagination"
     ],
   },
 {

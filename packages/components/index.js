@@ -6,6 +6,7 @@ import Tag from './tag/index'
 import Tips from './tips/index'
 import AmberDropdown from './dropdown/index'
 import AmberDropdownItem from './dropdown-item/index'
+import Pagination from './pagination/index'
 import PicturePreview from './picture-preview/index'
 import PictureRotation from './picture-rotation/index'
 import PictureStretch from './picture-stretch/index'
@@ -50,6 +51,7 @@ const components = [
   Tag,
   AmberDropdown,
   AmberDropdownItem,
+  Pagination,
   PicturePreview,
   PictureRotation,
   PictureStretch,
