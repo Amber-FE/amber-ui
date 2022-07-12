@@ -13,6 +13,7 @@ exports.Sidebar4ZH = [
     children: [
       "/basic/container",
       "/basic/color",
+      "basic/font",
       "/basic/grid",
       "/basic/icon",
       "/basic/button",
@@ -25,7 +26,8 @@ exports.Sidebar4ZH = [
       "/basic/divider",
       "/basic/notification",
       "/basic/tree",
-      "/basic/infinitescroll"
+      "/basic/infinitescroll",
+      "/basic/pagination"
     ],
   },
 {

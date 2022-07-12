@@ -1,0 +1,55 @@
+.amber-pagination {
+  list-style: none;
+  display: flex;
+  color: #222 !important;
+  &-head {
+    line-height: 32px;
+    display: flex;
+    .select {
+      display: flex;
+      margin: 0 0 0 2px;
+    }
+  }
+  .amber-pagination-item {
+    height: 32px;
+    width: 32px;
+    border: 1px solid #EEEEEE;
+    text-align: center;
+    margin-left: 6px;
+    border-radius: 2px;
+    cursor: pointer;
+    line-height: 32px;
+    .prev-icon {
+      width: 25px !important;
+      height: 25px !important;
+      cursor: pointer !important;
+      margin-top: 2px;
+    }
+  }
+  .active {
+    background-color: #1A9DFF;
+    color: #fff;
+  }
+  .amber-pagination-item:hover {
+    background-color: #1A9DFF;
+    color: #fff
+  }
+  &-footer {
+    line-height: 32px;
+    display: flex;
+    margin-left: 8px;
+    .page-input {
+      width: 44px;
+      height: 32px;
+      margin: 0 4px;
+      border-radius: 4px;
+      border: 1px solid #eee;
+      outline: none;
+      padding: 0 0 0 10px;
+      box-sizing: border-box;
+    }
+    .page-input:hover,.page-input:focus {
+      border: 1px solid #1A9DFF;
+    }
+  }
+}
