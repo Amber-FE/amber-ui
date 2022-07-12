@@ -1,8 +1,8 @@
-@import '../variables.scss';
+@import "../variables.scss";
 .amber-svg-icon {
   text-align: center;
-  fill: currentColor;
   overflow: hidden;
+  fill: currentColor;
 
   &--color {
     color: $primary-color;

@@ -1,0 +1,41 @@
+.amber-step-group {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #000000d9;
+  font-variant: tabular-nums;
+  list-style: none;
+  font-feature-settings: "tnum";
+  display: flex;
+  width: 100%;
+  &-horizontal {
+    display: flex;
+  }
+  &-vertical {
+    display: block;
+    .amber-step-item {
+      .amber-step-item-container {
+        flex-direction: row;
+        align-items: flex-start;
+        .amber-step-item-icon {
+          margin: 0;
+          padding: 10px;
+          &::after {
+            top: 100%;
+            left: 22px;
+            width: 2px;
+            height: 9999px;
+          }
+        }
+        .amber-step-item-content {
+          padding-top: 10px;
+          padding-left: 8px;
+          text-align: left;
+          &-description {
+            padding-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -41,6 +41,8 @@ import InputNumber from './inputNumber'
 import Rate from './rate/index'
 import Card from './card/index'
 import InfiniteScroll from './infinite-scroll/index'
+import StepGroup from './step-group/index'
+import Step from './step/index'
 
 const components = [
   Icon,
@@ -82,7 +84,9 @@ const components = [
   TimePicker,
   InputNumber,
   Rate,
-  Card
+  Card,
+  StepGroup,
+  Step
 ]
 const directives = [InfiniteScroll]
 

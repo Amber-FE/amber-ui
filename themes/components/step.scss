@@ -1,0 +1,164 @@
+.amber-step-item {
+  display: flex;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  vertical-align: top;
+  overflow: hidden;
+  .amber-step-item-container {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    flex-direction: column;
+    .amber-step-item-icon {
+      position: relative;
+      margin-bottom: 8px;
+      padding: 0 10px;
+      &-number {
+        width: 24px;
+        height: 24px;
+        text-align: center;
+        line-height: 24px;
+        border-radius: 50%;
+        background: #1b9dff;
+        font-size: 14px;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 500;
+        color: #ffffff;
+      }
+      &::after {
+        position: absolute;
+        top: 11px;
+        left: 100%;
+        display: block;
+        width: 9999px;
+        height: 2px;
+        background: #f0f0f0;
+        content: "";
+      }
+    }
+    .amber-step-item-content {
+      text-align: center;
+      &-title {
+        margin-bottom: 4px;
+        height: 20px;
+        font-size: 14px;
+        line-height: 20px;
+      }
+      &-description {
+        height: 18px;
+        font-size: 12px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #969799;
+        line-height: 18px;
+      }
+    }
+  }
+  &-wait {
+    .amber-step-item-container {
+      .amber-step-item-icon {
+        .amber-svg-icon--color {
+          color: #969799;
+        }
+        &-number {
+          background: #c8c9cc;
+        }
+      }
+      .amber-step-item-content {
+        &-title {
+          font-family: PingFangSC-Regular, PingFang SC;
+          color: #969799;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+  &-process {
+    .amber-step-item-container {
+      .amber-step-item-icon {
+        .amber-svg-icon--color {
+          color: #1b9dff;
+        }
+        &::after {
+          background: #f0f0f0;
+        }
+      }
+      .amber-step-item-content {
+        &-title {
+          font-family: PingFangSC-Medium, PingFang SC;
+          color: #323233;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+  &-finish {
+    .amber-step-item-container {
+      .amber-step-item-icon {
+        .amber-svg-icon--color {
+          color: #1b9dff;
+        }
+        &::after {
+          background: #1b9dff;
+        }
+      }
+      .amber-step-item-content {
+        &-title {
+          font-family: PingFangSC-Medium, PingFang SC;
+          color: #323233;
+          font-weight: 500;
+        }
+      }
+    }
+    &:last-child {
+      display: none;
+    }
+  }
+  &-disabled {
+    cursor: not-allowed;
+    .amber-step-item-container {
+      .amber-step-item-icon {
+        .amber-svg-icon--color {
+          color: $button-disable-color;
+        }
+        &-number {
+          background: #c8c9cc;
+        }
+      }
+      .amber-step-item-content {
+        &-title {
+          font-family: PingFangSC-Regular, PingFang SC;
+          color: $button-disable-color;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+  &-error {
+    .amber-step-item-container {
+      .amber-step-item-icon {
+        .amber-svg-icon--color {
+          color: #d40000;
+        }
+      }
+      .amber-step-item-content {
+        &-title {
+          font-family: PingFangSC-Medium, PingFang SC;
+          color: #d40000;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+  &:last-child {
+    flex: none;
+    .amber-step-item-container {
+      .amber-step-item-icon {
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+}
