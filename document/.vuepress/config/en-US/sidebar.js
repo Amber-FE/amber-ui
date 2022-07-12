@@ -28,22 +28,22 @@ exports.Sidebar4EN =  [
       "/en/basic/infinitescroll"
     ],
   },
-  {
-  title: "Form",
-  collapsable: false,
-    children: [
-      "/en/form/input",
-      "/en/form/radio",
-      "/en/form/checkbox",
-      "/en/form/select",
-      "/en/form/switch",
-      "/en/form/date-picker",
-      "/en/form/time-picker",
-      "/en/form/form",
-      "/en/form/inputNumber",
-      "/en/form/rate"
-    ]
-  },
+{
+title: "Form",
+collapsable: false,
+children: [
+  "/en/form/input",
+  "/en/form/radio",
+  "/en/form/checkbox",
+  "/en/form/select",
+  "/en/form/switch",
+  "/en/form/date-picker",
+  "/en/form/time-picker",
+  "/en/form/form",
+  "/en/form/inputNumber",
+  "/en/form/rate"
+]
+},
   {
     title: "Picture", // 必要的
     collapsable: false,
@@ -55,6 +55,6 @@ exports.Sidebar4EN =  [
     children: [
       "en/business/coupon",
       "en/business/card",
-    ],
+  ],
   },
 ]
