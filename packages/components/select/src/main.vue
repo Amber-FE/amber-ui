@@ -101,7 +101,7 @@ export default {
       }
     },
     defaultValue: {
-      type: [String, Array],
+      type: [String, Array, Number],
       default: () => {
         return ''
       }
