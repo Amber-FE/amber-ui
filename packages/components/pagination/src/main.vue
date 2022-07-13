@@ -1,12 +1,4 @@
 <template>
-<<<<<<< HEAD
-  <div class="amber-pagination-container"></div>
-</template>
-
-<script>
-export default {
-  name: 'AmberPagination'
-=======
   <ul class="amber-pagination">
     <li class="amber-pagination-head">
       <span>共{{ total }}条，每页</span>
@@ -213,6 +205,5 @@ export default {
   mounted() {
     this.pageAll = Math.ceil(this.total / this.pageSize)
   }
->>>>>>> main
 }
 </script>

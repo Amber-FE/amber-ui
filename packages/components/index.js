@@ -41,12 +41,8 @@ import InputNumber from './inputNumber'
 import Rate from './rate/index'
 import Card from './card/index'
 import InfiniteScroll from './infinite-scroll/index'
-<<<<<<< HEAD
 import StepGroup from './step-group/index'
 import Step from './step/index'
-=======
-import Pagination from './pagination/index'
->>>>>>> main
 
 const components = [
   Icon,
@@ -89,12 +85,8 @@ const components = [
   InputNumber,
   Rate,
   Card,
-<<<<<<< HEAD
   StepGroup,
   Step
-=======
-  Pagination
->>>>>>> main
 ]
 const directives = [InfiniteScroll]
 

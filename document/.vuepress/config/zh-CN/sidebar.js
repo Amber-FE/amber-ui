@@ -27,7 +27,8 @@ exports.Sidebar4ZH = [
       "/basic/notification",
       "/basic/tree",
       "/basic/infinitescroll",
-      "/basic/pagination"
+      "/basic/pagination",
+      "/basic/steps"
     ],
   },
 {

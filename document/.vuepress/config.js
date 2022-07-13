@@ -1,9 +1,6 @@
 
 
-// const  {NavItems4ZH}=  require ('./config/zh-CN/nav')
-// const  {Sidebar4ZH}=  require ('./config/zh-CN/sidebar')
-// const  {NavItems4EN}=  require ('./config/en-US/nav')
-// const  {Sidebar4EN}=  require ('./config/en-US/sidebar')
+
 const { NavItems4ZH, Sidebar4ZH} = require ('./config/zh-CN/index')
 const { NavItems4EN, Sidebar4EN} = require ('./config/en-US/index')
 

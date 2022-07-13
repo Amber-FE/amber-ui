@@ -4,7 +4,7 @@
 Child elements of `<amber-step-group>` can only be `<amber-step>`
 :::
 
-## Example
+### Example
 
 ### Basic usage
 

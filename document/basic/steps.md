@@ -1,10 +1,10 @@
 # Steps 步骤条
 
-:::tip
+::: tip
 `<amber-step-group>` 的子元素只能是 `<amber-step>`
 :::
 
-## 示例
+### 示例
 
 ### 基础用法
 

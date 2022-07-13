@@ -25,7 +25,8 @@ exports.Sidebar4EN =  [
       "/en/basic/divider",
       "/en/basic/notification",
       "/en/basic/tree",
-      "/en/basic/infinitescroll"
+      "/en/basic/infinitescroll",
+      "/en/basic/steps"
     ],
   },
 {
