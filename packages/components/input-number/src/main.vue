@@ -1,30 +1,49 @@
 <template>
-  <div class="amber-input-number-container">
-    <div class="amber-input-number-container-input" :class="getInputClass">
-      <amber-input
-        v-model="val"
-        :disabled="disabled"
-        @blur="onblur"
-        @focus="onfocus"
-        @change="onchange"
-      ></amber-input>
-    </div>
-    <div class="jiantou">
-      <div class="jiantou-down" :style="getDownStyle" @click="decrease">
-        <amber-icon
-          size="16px"
+  <div class="amber-input-number">
+    <div class="amber-input-number-container" :class="getContainerClass">
+      <div class="amber-input-number-container-input" :class="getInputClass">
+        <amber-input
+          v-model="val"
           :disabled="disabled"
-          :style="getDownStyle"
-          iconClass="jiantou_down"
-        ></amber-icon>
+          @blur="onblur"
+          @focus="onfocus"
+          @change="onchange"
+        ></amber-input>
       </div>
-      <div class="jiantou-up" :style="getUpStyle" @click="increase">
-        <amber-icon
-          size="16px"
-          :disabled="disabled"
-          :style="getUpStyle"
-          iconClass="jiantou_up"
-        ></amber-icon>
+      <div class="jiantou">
+        <div class="jiantou-down" :style="getDownStyle" @click="decrease">
+          <amber-icon
+            size="16px"
+            :disabled="disabled"
+            :style="getDownStyle"
+            iconClass="jiantou_down"
+          ></amber-icon>
+        </div>
+        <div class="jiantou-up" :style="getUpStyle" @click="increase">
+          <amber-icon
+            size="16px"
+            :disabled="disabled"
+            :style="getUpStyle"
+            iconClass="jiantou_up"
+          ></amber-icon>
+        </div>
+      </div>
+    </div>
+    <div class="amber-input-number-tip" v-if="isShowTip">
+      <div v-if="!isShowRange" class="amber-input-number-tip-text">当前值为：{{ val }}</div>
+      <div v-if="isShowRange" class="amber-input-number-tip-text">
+        <div class="tip-show-range" v-if="min !== -Infinity && max !== Infinity">
+          请输入<span class="tip-number">{{ min }}~{{ max }}</span
+          >之间的数值
+        </div>
+        <div class="tip-show-range" v-if="min === -Infinity && max !== Infinity">
+          请输入小于<span class="tip-number">{{ max }}</span
+          >的数值
+        </div>
+        <div class="tip-show-range" v-if="min !== -Infinity && max === Infinity">
+          请输入大于<span class="tip-number">{{ min }}</span
+          >的数值
+        </div>
       </div>
     </div>
   </div>
@@ -47,7 +66,8 @@ export default {
   },
   data() {
     return {
-      val: `${this.value}`
+      val: `${this.value}`,
+      isShowRange: false
     }
   },
   props: {
@@ -78,6 +98,10 @@ export default {
     size: {
       type: String,
       default: () => 'small'
+    },
+    isShowTip: {
+      type: Boolean,
+      default: () => false
     }
   },
   watch: {
@@ -94,6 +118,11 @@ export default {
         [`amber-input-number-container-input-${this.size}`]: this.size
       }
     },
+    getContainerClass() {
+      return {
+        [`amber-input-number-container-${this.size}`]: this.size
+      }
+    },
     getprecision() {
       if (`${this.step}`.includes('.')) {
         const index = `${this.step}`.indexOf('.')
@@ -103,23 +132,30 @@ export default {
     },
     getDownStyle() {
       return {
-        cursor: this.val <= this.min || this.disabled ? 'not-allowed' : 'pointer'
+        cursor: this.val <= this.min || this.disabled ? 'not-allowed' : 'pointer',
+        backgroundColor: this.disabled ? 'rgba(204,204,204,.2)' : 'FFF'
       }
     },
     getUpStyle() {
       return {
-        cursor: this.val >= this.max || this.disabled ? 'not-allowed' : 'pointer'
+        cursor: this.val >= this.max || this.disabled ? 'not-allowed' : 'pointer',
+        backgroundColor: this.disabled ? 'rgba(204,204,204,.2)' : 'FFF'
       }
     }
   },
   methods: {
     getCurrentVal(newVal) {
-      if (newVal >= this.max) {
-        this.val = `${this.max}`
+      if (newVal > this.max) {
+        this.isShowRange = true
+        this.val = `${this.max.toFixed(this.getprecision)}`
+        return
       }
-      if (newVal <= this.min) {
-        this.val = `${this.min}`
+      if (newVal < this.min) {
+        this.isShowRange = true
+        this.val = `${this.min.toFixed(this.getprecision)}`
+        return
       }
+      this.isShowRange = false
       this.val = `${Number(newVal).toFixed(this.getprecision)}`
     },
     onchange(newVal) {
@@ -128,22 +164,30 @@ export default {
     },
     increase() {
       if (this.disabled || this.val >= this.max) {
+        if (this.val >= this.max) {
+          this.isShowRange = true
+        }
         return
       }
       // this.val = `${Number(this.val) + this.step}`
       const bigA = new Big(Number(this.val))
       this.val = bigA.plus(this.step).toString()
       this.val = `${Number(this.val).toFixed(this.getprecision)}`
+      this.isShowRange = false
       this.$emit('change', Number(this.val))
     },
     decrease() {
       if (this.disabled || this.val <= this.min) {
+        if (this.val <= this.min) {
+          this.isShowRange = true
+        }
         return
       }
       // this.val = `${this.val - this.step}`
       const bigA = new Big(Number(this.val))
       this.val = bigA.minus(this.step).toString()
       this.val = `${Number(this.val).toFixed(this.getprecision)}`
+      this.isShowRange = false
       this.$emit('change', Number(this.val))
     },
     onblur(e) {

@@ -6,7 +6,7 @@
 ```html
 <div style="display:flex;align-items:center">
   <amber-input-number v-model="num" @change ="change"  :min="0" :max="10"></amber-input-number>
-<span>当前值为{{num}}</span>
+
 </div>
 <script>
   export default{
@@ -55,6 +55,31 @@
 
 ```
 ::: 
+### 文字提示
+#### 当需要提示时，可以通过 isShowTip 来显示
+
+::: demo
+```html
+<div style="display:flex;align-items:center">
+  <amber-input-number isShowTip v-model="num" @change ="change"  :min="0" :max="10"></amber-input-number>
+
+</div>
+<script>
+  export default{
+    data(){
+      return {
+        num: 2
+      }
+    },
+    methods:{
+      change(val){
+        console.log(val);
+      }
+    }
+  }
+</script>
+```
+::: 
 
 ### API
 
@@ -69,6 +94,8 @@
 | size | 计数器的尺寸 | string | large middle samll | small |
 | disabled | 是否禁用计数器 | boolean | --- | false |
 | precision | 精确度 | number | --- | 1 |
+| isShowTip | 是否显示下方提示文字 | Boolean | --- | false |
+
 
 
 #### InputNumber 事件
