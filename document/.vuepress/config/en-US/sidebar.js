@@ -27,6 +27,7 @@ exports.Sidebar4EN =  [
       "/en/basic/notification",
       "/en/basic/tree",
       "/en/basic/infinitescroll",
+      "/en/basic/pagination",
       "/en/basic/steps"
     ],
   },

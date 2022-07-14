@@ -19,7 +19,8 @@
 
 ### 跳转展示
 分页器展示，可以通过添加isJump属性来展示跳转功能。</br>
-绑定total属性来显示总数据条数。绑定pageSizes来控制每页显示个数选择器的选项设置。
+绑定total属性来显示总数据条数。绑定pageSizes来控制每页显示个数选择器的选项设置。</br>
+在输入框中写入需要跳转的页码后让输入框失焦或按下回车键即可跳转到对应的页码。
 ::: demo
 ```html
 <amber-pagination isJump :total="500" :pageSizes="pageSizes" @getCurrentPage="getCurrentPage"></amber-pagination>
