@@ -5,7 +5,15 @@ For the basic pager display, the default total data is 100, and each page displa
 ::: demo
 ```html
 <amber-pagination></amber-pagination>
-
+<script>
+  export default {
+    methods: {
+      getCurrentPage(val) {
+        console.log('当前页码为',val)
+      }
+    }
+  }
+</script>
 ```
 :::
 
@@ -21,11 +29,17 @@ Bind the total attribute to display the total number of data pieces. Bind pagesi
       return {
         pageSizes: ['10', '50', '80', '100']
       }
+    },
+    methods: {
+      getCurrentPage(val) {
+        console.log('当前页码为',val)
+      }
     }
   }
 </script>
 ```
 :::
+
 ### Pagination Attribute  
 | parameter  |   explain            | type          | defalut |
 | ---------- | -------------------- | --------------| ------- |
