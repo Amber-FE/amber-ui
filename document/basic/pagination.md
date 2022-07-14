@@ -4,8 +4,16 @@
 基础的分页器展示，默认总数据为100条，每一页显示10条。
 ::: demo
 ```html
-<amber-pagination></amber-pagination>
-
+<amber-pagination @getCurrentPage="getCurrentPage"></amber-pagination>
+<script>
+  export default {
+    methods: {
+      getCurrentPage(val) {
+        console.log('当前页码为',val)
+      }
+    }
+  }
+</script>
 ```
 :::
 
@@ -14,12 +22,17 @@
 绑定total属性来显示总数据条数。绑定pageSizes来控制每页显示个数选择器的选项设置。
 ::: demo
 ```html
-<amber-pagination isJump :total="500" :pageSizes="pageSizes"></amber-pagination>
+<amber-pagination isJump :total="500" :pageSizes="pageSizes" @getCurrentPage="getCurrentPage"></amber-pagination>
 <script>
   export default {
     data() {
       return {
         pageSizes: ['10', '50', '80', '100']
+      }
+    },
+    methods: {
+      getCurrentPage(val) {
+        console.log('当前页码为',val)
       }
     }
   }
@@ -27,8 +40,15 @@
 ```
 :::
 
+### Pagination Attribute  
 | 参数   |   说明    | 类型 | 默认值 |
 | ----- | --------- | ------ | --- | --- |
 |total  | 数据总条数 | string/number | 100 |
 |pageSizes | 每页显示个数选择器 | string[] | ['10', '20', '30', '50', '100']  |
 |isJump | 展示跳转功能 | Boolean | false  |
+
+### Pagination Active
+| 事件名 | 说明 | 返回值 |
+| ---- | ---  | ---  | 
+| getCurrentPage | 页码更新时触发的事件 | 当前页码 |
+

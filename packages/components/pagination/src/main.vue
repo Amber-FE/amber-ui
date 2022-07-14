@@ -108,11 +108,11 @@ export default {
   methods: {
     handleChange() {
       this.pageAll = Math.ceil(this.total / this.pageSize)
-      console.log(this.pageAll)
     },
     changePage(item) {
       this.selectPage = item
       this.pageCurrent = item
+      this.$emit('getCurrentPage', item)
     },
     goNextPage() {
       this.selectPage += 1
@@ -120,6 +120,7 @@ export default {
         this.selectPage = this.pageAll
       }
       this.pageCurrent = this.selectPage
+      this.$emit('getCurrentPage', this.pageCurrent)
     },
     goPrevPage() {
       this.selectPage -= 1
@@ -127,6 +128,7 @@ export default {
         this.selectPage = 1
       }
       this.pageCurrent = this.selectPage
+      this.$emit('getCurrentPage', this.pageCurrent)
     },
     currentPageAdd() {
       this.selectPage += 5
@@ -149,6 +151,7 @@ export default {
         this.selectPage = this.pageAll
         this.pageCurrent = this.pageAll
       }
+      this.$emit('getCurrentPage', this.pageCurrent)
     }
   },
   computed: {
@@ -196,9 +199,6 @@ export default {
       this.showPrevMore = showPrevMore
       // eslint-disable-next-line vue/no-side-effects-in-computed-properties
       this.showNextMore = showNextMore
-
-      console.log(this.showPrevMore, this.showNextMore)
-      console.log(pageArray)
       return pageArray
     }
   },
