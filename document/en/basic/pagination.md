@@ -26,9 +26,14 @@ Bind the total attribute to display the total number of data pieces. Bind pagesi
 </script>
 ```
 :::
-
+### Pagination Attribute  
 | parameter  |   explain            | type          | defalut |
 | ---------- | -------------------- | --------------| ------- |
 |total       | Total number of data | string/number | 100     |
 |pageSizes   | Display number selector per page | string[] | ['10', '20', '30', '50', '100']  |
 |isJump      | Show jump function   | Boolean       | false   |
+
+### Pagination Active
+| name | explain | Return value |
+| ---- | ---  | ---  | 
+| getCurrentPage | Triggered when the page number is updated | Current page |
