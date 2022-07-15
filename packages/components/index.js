@@ -43,6 +43,7 @@ import Card from './card/index'
 import InfiniteScroll from './infinite-scroll/index'
 import StepGroup from './step-group/index'
 import Step from './step/index'
+import Toast from './toast/index'
 
 const components = [
   Icon,
@@ -86,7 +87,8 @@ const components = [
   Rate,
   Card,
   StepGroup,
-  Step
+  Step,
+  Toast
 ]
 const directives = [InfiniteScroll]
 

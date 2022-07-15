@@ -28,7 +28,8 @@ exports.Sidebar4ZH = [
       "/basic/tree",
       "/basic/infinitescroll",
       "/basic/pagination",
-      "/basic/steps"
+      "/basic/steps",
+      "/basic/toast"
     ],
   },
 {
