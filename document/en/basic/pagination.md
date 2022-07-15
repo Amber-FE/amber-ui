@@ -4,28 +4,42 @@
 For the basic pager display, the default total data is 100, and each page displays 10.
 ::: demo
 ```html
-<amber-pagination></amber-pagination>
-
-```
-:::
-
-### Jump show
-Pager display, you can add the isjump attribute to show the jump function.</br>
-Bind the total attribute to display the total number of data pieces. Bind pagesizes to control the option setting of the number of displays per page selector.
-::: demo
-```html
-<amber-pagination isJump :total="500" :pageSizes="pageSizes"></amber-pagination>
+<amber-pagination @getCurrentPage="getCurrentPage"></amber-pagination>
 <script>
   export default {
-    data() {
-      return {
-        pageSizes: ['10', '50', '80', '100']
+    methods: {
+      getCurrentPage(val) {
+        console.log('当前页码为',val)
       }
     }
   }
 </script>
 ```
 :::
+
+### Jump show
+Pager display, you can add the isjump attribute to show the jump function.</br>
+Bind the total attribute to display the total number of data pieces. Bind pagesizes to control the option setting of the number of displays per page selector.After writing the page number to jump into the input box, make the input box out of focus or press the Enter key to jump to the corresponding page number.
+::: demo
+```html
+<amber-pagination isJump :total="500" :pageSizes="pageSizes" @getCurrentPage="getCurrentPage"></amber-pagination>
+<script>
+  export default {
+    data() {
+      return {
+        pageSizes: ['10', '50', '80', '100']
+      }
+    },
+    methods: {
+      getCurrentPage(val) {
+        console.log('当前页码为',val)
+      }
+    }
+  }
+</script>
+```
+:::
+
 ### Pagination Attribute  
 | parameter  |   explain            | type          | defalut |
 | ---------- | -------------------- | --------------| ------- |

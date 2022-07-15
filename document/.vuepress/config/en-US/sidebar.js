@@ -13,6 +13,7 @@ exports.Sidebar4EN =  [
     children: [
       "/en/basic/container",
       "/en/basic/color",
+      "/en/basic/font",
       "/en/basic/grid",
       "/en/basic/icon",
       "/en/basic/button",
@@ -26,6 +27,7 @@ exports.Sidebar4EN =  [
       "/en/basic/notification",
       "/en/basic/tree",
       "/en/basic/infinitescroll",
+      "/en/basic/pagination",
       "/en/basic/steps"
     ],
   },

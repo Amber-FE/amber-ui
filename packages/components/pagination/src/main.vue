@@ -140,7 +140,7 @@ export default {
       if (this.selectPage <= 1) this.selectPage = 1
       this.pageCurrent = this.selectPage
     },
-    changeCurrent() {
+    changeCurrent(e) {
       this.pageCurrent = Math.floor(this.pageCurrent)
       this.selectPage = this.pageCurrent
       if (this.selectPage <= 1) {
@@ -152,6 +152,7 @@ export default {
         this.pageCurrent = this.pageAll
       }
       this.$emit('getCurrentPage', this.pageCurrent)
+      e.target.blur()
     }
   },
   computed: {
