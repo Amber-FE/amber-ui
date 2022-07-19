@@ -1,7 +1,7 @@
 # Steps 步骤条
 
 :::tip
-Child elements of `<amber-step-group>` can only be `<amber-step>`
+Child elements of `<amber-steps>` can only be `<amber-step>`
 :::
 
 ### Example
@@ -11,11 +11,11 @@ Child elements of `<amber-step-group>` can only be `<amber-step>`
 ::: demo
 
 ```html
-<amber-step-group :current="1">
+<amber-steps :current="1">
   <amber-step title="fair" description="Auxiliary Instructions" />
   <amber-step title="fair" description="Auxiliary Instructions"></amber-step>
   <amber-step title="still fucking fair" description="Auxiliary Instructions" />
-</amber-step-group>
+</amber-steps>
 ```
 
 :::
@@ -25,23 +25,23 @@ Child elements of `<amber-step-group>` can only be `<amber-step>`
 ::: demo
 
 ```html
-<amber-step-group :current="0">
+<amber-steps :current="0">
   <amber-step title="dinner">
     <template v-slot:icon
       ><amber-icon size="32px" :pointer="true" color="#5d82a6" icon-class="a-putongshipin3x"
     /></template>
   </amber-step>
-  <amber-step title="kill the chicken">
+  <amber-step title="beheaded">
     <template v-slot:icon
       ><amber-icon size="32px" :pointer="true" color="#5d82a6" icon-class="a-zhongxichengyao3x"
     /></template>
   </amber-step>
-  <amber-step title="egg retrieval">
+  <amber-step title="accept it as a dog">
     <template v-slot:icon
       ><amber-icon size="32px" :pointer="true" color="#5d82a6" icon-class="a-bianzu313x"
     /></template>
   </amber-step>
-</amber-step-group>
+</amber-steps>
 ```
 
 :::
@@ -51,11 +51,11 @@ Child elements of `<amber-step-group>` can only be `<amber-step>`
 ::: demo
 
 ```html
-<amber-step-group :current="1" status="error">
+<amber-steps :current="1" status="error">
   <amber-step title="dinner" description="eat simple" />
-  <amber-step title="kill the chicken" description="county magistrate" />
-  <amber-step title="egg retrieval" description="gem" />
-</amber-step-group>
+  <amber-step title="beheaded" description="county magistrate" />
+  <amber-step title="accept it as a dog" description="gem" />
+</amber-steps>
 ```
 
 :::
@@ -65,11 +65,11 @@ Child elements of `<amber-step-group>` can only be `<amber-step>`
 ::: demo
 
 ```html
-<amber-step-group direction="vertical" :current="current">
+<amber-steps direction="vertical" :current="current">
   <amber-step title="fair" description="Auxiliary Instructions" />
   <amber-step title="fair" description="Auxiliary Instructions"></amber-step>
   <amber-step title="still fucking fair" description="Auxiliary Instructions" />
-</amber-step-group>
+</amber-steps>
 <script>
   export default {
     data() {
@@ -93,17 +93,17 @@ Child elements of `<amber-step-group>` can only be `<amber-step>`
 ::: demo
 
 ```html
-<amber-step-group :current="current" @change="onChange">
+<amber-steps :current="current" @change="onChange">
   <amber-step title="fair" description="Auxiliary Instructions" />
   <amber-step title="fair" description="Auxiliary Instructions"></amber-step>
   <amber-step title="still fucking fair" description="Auxiliary Instructions" />
-</amber-step-group>
+</amber-steps>
 <hr />
-<amber-step-group direction="vertical" :current="current" @change="onChange">
+<amber-steps direction="vertical" :current="current" @change="onChange">
   <amber-step title="fair" description="Auxiliary Instructions" />
   <amber-step title="fair" description="Auxiliary Instructions"></amber-step>
   <amber-step title="still fucking fair" description="Auxiliary Instructions" />
-</amber-step-group>
+</amber-steps>
 <script>
   export default {
     data() {

@@ -1,7 +1,7 @@
 # Steps 步骤条
 
 ::: tip
-`<amber-step-group>` 的子元素只能是 `<amber-step>`
+`<amber-steps>` 的子元素只能是 `<amber-step>`
 :::
 
 ### 示例
@@ -11,11 +11,11 @@
 ::: demo
 
 ```html
-<amber-step-group :current="1">
+<amber-steps :current="1">
   <amber-step title="公平" description="辅助说明" />
   <amber-step title="公平" description="辅助说明"></amber-step>
-  <amber-step title="还是**公平" description="辅助说明" />
-</amber-step-group>
+  <amber-step title="还是 ** 的公平" description="辅助说明" />
+</amber-steps>
 ```
 
 :::
@@ -25,23 +25,23 @@
 ::: demo
 
 ```html
-<amber-step-group :current="0">
+<amber-steps :current="0">
   <amber-step title="请客">
     <template v-slot:icon
       ><amber-icon size="32px" :pointer="true" color="#5d82a6" icon-class="a-putongshipin3x"
     /></template>
   </amber-step>
-  <amber-step title="杀鸡">
+  <amber-step title="斩首">
     <template v-slot:icon
       ><amber-icon size="32px" :pointer="true" color="#5d82a6" icon-class="a-zhongxichengyao3x"
     /></template>
   </amber-step>
-  <amber-step title="取卵">
+  <amber-step title="收下当 *">
     <template v-slot:icon
       ><amber-icon size="32px" :pointer="true" color="#5d82a6" icon-class="a-bianzu313x"
     /></template>
   </amber-step>
-</amber-step-group>
+</amber-steps>
 ```
 
 :::
@@ -51,11 +51,11 @@
 ::: demo
 
 ```html
-<amber-step-group :current="1" status="error">
+<amber-steps :current="1" status="error">
   <amber-step title="请客" description="简单吃点" />
-  <amber-step title="杀鸡" description="县长" />
-  <amber-step title="取卵" description="宝石" />
-</amber-step-group>
+  <amber-step title="斩首" description="县长" />
+  <amber-step title="收下当 *" description="宝石" />
+</amber-steps>
 ```
 
 :::
@@ -65,11 +65,11 @@
 ::: demo
 
 ```html
-<amber-step-group direction="vertical" :current="current">
+<amber-steps direction="vertical" :current="current">
   <amber-step title="公平" description="辅助说明" />
   <amber-step title="公平" description="辅助说明"></amber-step>
-  <amber-step title="还是**公平" description="辅助说明" />
-</amber-step-group>
+  <amber-step title="还是 ** 的公平" description="辅助说明" />
+</amber-steps>
 <script>
   export default {
     data() {
@@ -93,17 +93,17 @@
 ::: demo
 
 ```html
-<amber-step-group :current="current" @change="onChange">
+<amber-steps :current="current" @change="onChange">
   <amber-step title="公平" description="辅助说明" />
   <amber-step title="公平" description="辅助说明"></amber-step>
-  <amber-step title="还是**公平" description="辅助说明" />
-</amber-step-group>
+  <amber-step title="还是 ** 的公平" description="辅助说明" />
+</amber-steps>
 <hr />
-<amber-step-group direction="vertical" :current="current" @change="onChange">
+<amber-steps direction="vertical" :current="current" @change="onChange">
   <amber-step title="公平" description="辅助说明" />
   <amber-step title="公平" description="辅助说明"></amber-step>
-  <amber-step title="还是**公平" description="辅助说明" />
-</amber-step-group>
+  <amber-step title="还是 ** 的公平" description="辅助说明" />
+</amber-steps>
 <script>
   export default {
     data() {

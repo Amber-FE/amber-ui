@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'AmberStepGroup',
+  name: 'AmberSteps',
   props: {
     current: {
       type: Number,
@@ -33,7 +33,7 @@ export default {
     if (!isStep) return h(null)
     return h(
       'div',
-      { class: `amber-step-group amber-step-group-${this.direction}` },
+      { class: `amber-steps amber-steps-${this.direction}` },
       children
         .filter((child) => child.tag)
         .map((child, i) => {
