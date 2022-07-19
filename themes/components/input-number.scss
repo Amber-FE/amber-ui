@@ -1,29 +1,52 @@
+@import '../variables.scss';
+.amber-input-number{
 
   .amber-input-number-container{
     display: flex;
-    // height: 40px;
+    position: relative;
+    border: 1px solid #EEEEEE;
+    // height: 42px;
     // width: 100px;
+    &:active{
+      border: 1px solid $primary-color;
+    }
+    &:hover{
+      border: 1px solid $primary-color;
+    }
+    &:focus{
+      border: 1px solid $primary-color;
+    }
+    &-middle{
+      width: 152px;
+    }
+    &-small{
+      width: 122px;
+    }
+    &-large {
+      width: 182px;
+    }
     &-input{
-      height: 40px;
+      height: 42px;
       color: #666666;
       position: relative;
       &-middle{
-        width: 81px;
+        width: 152px;
       }
       &-small{
-        width: 71px;
+        width: 122px;
       }
       &-large {
-        width: 100px;
+        width: 182px;
       }
       .amber-input-container{
         .amber-input{
           // text-align: center;
-          height: 40px;
+          height: 42px;
           font-size: 18px;
           font-family: DIN-Bold, DIN;
           font-weight: bold;
           padding-left: 14px;
+          border: none;
         &[disabled]{
           background-color: rgba($color: #ccc, $alpha: 0.2);
         }
@@ -31,32 +54,56 @@
       }
     }
     .jiantou{
+      position: absolute;
       display: flex;
       flex-direction: column;
       margin-left: 3px;
       justify-content: space-between;
       user-select: none;
+      top: 0px;
+      right: 0px;
+      height: 42px;
     .jiantou-up{
       box-sizing: border-box;
       line-height: 19px;
       text-align: center;
-      width: 18px;
+      width: 19px;
       height: 19px;
       background: #FFFFFF;
       border: 1px solid #EEEEEE;
+      border-right: none;
+      border-bottom: none;
     }
     .jiantou-down{
       box-sizing: border-box;
       line-height: 19px;
       text-align: center;
-      width: 18px;
+      width: 19px;
       height: 19px;
       background: #FFFFFF;
       border: 1px solid #EEEEEE;
+      border-right: none;
+      border-top: none;
     }
     }
-    & + .amber-input-number-container{
-      margin-left: 15px;
+
+  }
+  &-tip{
+    display: flex;
+    align-items: center;
+    margin-top: 3px;
+    &-text{
+      font-size: 12px;
+      color:#969799;
+      .tip-show-range{
+        color: $danger-color;
+      }
+      // .tip-number{
+      //   font-size: 14px;
+      // }
     }
   }
-
+  & + .amber-input-number{
+    margin-left: 15px;
+  }
+}

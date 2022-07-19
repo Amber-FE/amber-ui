@@ -13186,6 +13186,11 @@
     "clone-deep" "^4.0.1"
     "wildcard" "^2.0.0"
 
+"webpack-node-externals@^3.0.0":
+  "integrity" "sha512-LnL6Z3GGDPht/AigwRh2dvL9PQPFQ8skEpVrWZXLWBYmqcaojHNN0onvHzie6rq7EWKrrBfPYqNEzTJgiwEQDQ=="
+  "resolved" "https://registry.npmmirror.com/webpack-node-externals/-/webpack-node-externals-3.0.0.tgz"
+  "version" "3.0.0"
+
 "webpack-sources@^1.1.0", "webpack-sources@^1.4.0", "webpack-sources@^1.4.1":
   "integrity" "sha1-7t2OwLko+/HL/plOItLYkPMwqTM="
   "resolved" "https://registry.npmmirror.com/webpack-sources/download/webpack-sources-1.4.3.tgz"

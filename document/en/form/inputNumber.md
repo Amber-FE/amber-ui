@@ -1,12 +1,11 @@
 # InputNumber 
 
-### 基本使用
+### Basic
 
 ::: demo
 ```html
 <div style="display:flex;align-items:center">
   <amber-input-number v-model="num" @change ="change"  :min="0" :max="10"></amber-input-number>
-<span>当前值为{{num}}</span>
 </div>
 <script>
   export default{
@@ -25,8 +24,8 @@
 ```
 ::: 
 
-### 大小
-#### 计数器的尺寸
+### Size
+#### InputNumber Size
 ::: demo
 ```html
 <div style="display:flex;">
@@ -37,8 +36,8 @@
 
 ```
 ::: 
-### 禁用
-#### 计数器不可使用
+### Disabled
+#### InputNumber Disabled
 
 ::: demo
 ```html
@@ -47,8 +46,9 @@
 ```
 ::: 
 
-### 小数
-#### 当步长为小数，精度则由步长决定，
+### step
+#### Range When the step size is a decimal, the accuracy is determined by the step size
+
 ::: demo
 ```html
 <amber-input-number :min="0"  size="middle"  :step="0.05" :max="10"></amber-input-number>
@@ -56,25 +56,53 @@
 ```
 ::: 
 
+### The tooltip
+#### Text Prompt You can run the isShowTip command to display text prompt 
+
+::: demo
+```html
+<div style="display:flex;align-items:center">
+  <amber-input-number isShowTip v-model="num" @change ="change"  :min="0" :max="10"></amber-input-number>
+
+</div>
+<script>
+  export default{
+    data(){
+      return {
+        num: 2
+      }
+    },
+    methods:{
+      change(val){
+        console.log(val);
+      }
+    }
+  }
+</script>
+```
+::: 
+
 ### API
 
 #### InputNumber
 
-| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+| params | explain | type | optional | default |
 | --- | --- | --- | --- | --- |
-| value/v-model | 计数器的绑定值 | number | --- | 0 |  
-| min | 计数器的最小值 | number | --- | -Infinity |  |
-| max | 计数器的最大值 | number | --- | Infinity |  |
-| step | 计数器的步数长度(可以为小数) | number | --- | 1 |
-| size | 计数器的尺寸 | string | large middle samll | small |
-| disabled | 是否禁用计数器 | boolean | --- | false |
-| precision | 精确度 | number | --- | 1 |
+| value/v-model | The bound value of the counter | number | --- | 0 |  
+| min | Minimum value of counter | number | --- | -Infinity |  |
+| max | Maximum value of counter | number | --- | Infinity |  |
+| step | The length of the counter's steps (can be decimal) | number | --- | 1 |
+| size | Size of counter | string | large middle samll | small |
+| disabled | Whether to disable counters | boolean | --- | false |
+| precision | precision | number | --- | 1 |
+| isShowTip | Whether to display the following prompt text | Boolean | --- | false |
+
 
 
 #### InputNumber 事件
-| 事件名称 | 说明 | 回调参数 | 
+| Event | explain | params | 
 | --- | --- | --- |
-| change | 绑定值发生改变时触发 | oldVal newVal |
-| blur | 在组件input失去焦点的时候触发 | (event Event) |
-| focus | 在组件input获取焦点的时候触发 | (event Event) |
+| change | Triggered when the binding value changes | oldVal newVal |
+| blur | Fired when the binding value changes fired when the component input loses focus  | (event Event) |
+| focus | Fired when the component input gets focus | (event Event) |
 
