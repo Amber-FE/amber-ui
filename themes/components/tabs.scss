@@ -1,0 +1,80 @@
+.amber-tabs {
+  overflow: hidden;
+  &-bar {
+    display: flex;
+    margin: 0 0 16px;
+    border-bottom: 1px solid #e8e8e8;
+    outline: none;
+    &-container {
+      position: relative;
+      box-sizing: border-box;
+      margin-bottom: -1px;
+      overflow: hidden;
+      font-size: 14px;
+      line-height: 1.5;
+      white-space: nowrap;
+      zoom: 1;
+      .amber-tab-item {
+        position: relative;
+        display: inline-block;
+        box-sizing: border-box;
+        height: 100%;
+        margin: 0 32px 0 0;
+        padding: 12px 16px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        &-active {
+          color: #1890ff;
+          text-shadow: 0 0 0.25px currentColor;
+        }
+        &-disabled {
+          color: rgba(0, 0, 0, 0.25);
+          cursor: not-allowed;
+        }
+      }
+      .ant-tabs-ink-bar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        box-sizing: border-box;
+        width: 0;
+        height: 2px;
+        background-color: #1890ff;
+        transform-origin: 0 0;
+        &-animated {
+          transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
+            width 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), left 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+      }
+    }
+  }
+  &-content {
+    display: flex;
+    width: 100%;
+    .amber-tab {
+      display: none;
+      width: 100%;
+      flex-shrink: 0;
+      &-active {
+        display: block;
+      }
+    }
+    &-animated {
+      display: flex;
+      flex-direction: row;
+      transition: margin-left .3s cubic-bezier(.645,.045,.355,1);
+      will-change: margin-left;
+      .amber-tab {
+        display: block;
+        overflow: hidden;
+        height: 0;
+        &-active {
+          height: inherit;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

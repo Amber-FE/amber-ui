@@ -28,7 +28,8 @@ exports.Sidebar4EN =  [
       "/en/basic/tree",
       "/en/basic/infinitescroll",
       "/en/basic/pagination",
-      "/en/basic/steps"
+      "/en/basic/steps",
+      "/en/basic/tabs",
     ],
   },
 {

@@ -1,7 +1,7 @@
-import StepGroup from './src/main.vue'
+import Steps from './src/main.vue'
 
-StepGroup.install = (Vue) => {
-  Vue.component(StepGroup.name, StepGroup)
+Steps.install = (Vue) => {
+  Vue.component(Steps.name, Steps)
 }
 
-export default StepGroup
+export default Steps
