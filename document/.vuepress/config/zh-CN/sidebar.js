@@ -30,6 +30,7 @@ exports.Sidebar4ZH = [
       "/basic/pagination",
       "/basic/steps",
       "/basic/tabs",
+      "/basic/toast"
     ],
   },
 {

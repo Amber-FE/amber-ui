@@ -45,6 +45,7 @@ import StepGroup from './step-group/index'
 import Step from './step/index'
 import TabGroup from './tab-group/index'
 import Tab from './tab/index'
+import Toast from './toast/index'
 
 const components = [
   Icon,
@@ -90,7 +91,8 @@ const components = [
   StepGroup,
   Step,
   TabGroup,
-  Tab
+  Tab,
+  Toast
 ]
 const directives = [InfiniteScroll]
 
