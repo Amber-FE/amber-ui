@@ -13,14 +13,21 @@ export default {
     disabled: {
       type: Boolean,
       default: false
+    },
+    closable: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
     classls() {
-      return { 'amber-tab': true, 'amber-tab-active': this.tabGround.currenNameKey === this.name }
+      return {
+        'amber-tab': true,
+        'amber-tab-active': this.tabGroundData.activeNameKey === this.name
+      }
     }
   },
-  inject: ['tabGround'],
+  inject: ['tabGroundData', 'tabGroundProps'],
   created() {
     // console.log(this)
   }

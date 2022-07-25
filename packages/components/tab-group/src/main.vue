@@ -1,17 +1,9 @@
 <template>
   <div class="amber-tabs">
-    <AmberTabsBar
-      :currenName="currenNameKey"
-      :names="names"
-      :tabs="tabs"
-      :disableds="disableds"
-      @change="tabBarClick"
-    ></AmberTabsBar>
-    <div
-      ref="tabsContent"
-      class="amber-tabs-content amber-tabs-content-animated"
-      :style="tabsContentStyle"
-    >
+    <AmberTabsBar @change="tabBarClick" @edit="closeClick">
+      <slot name="tabBarExtraContent" />
+    </AmberTabsBar>
+    <div ref="tabsContent" :class="className" :style="tabsContentStyle">
       <slot />
     </div>
   </div>
@@ -19,7 +11,7 @@
 
 <script>
 import AmberTabsBar from './tabBar.vue'
-import { removeEmpty, getPropsData } from '../../../util/slots'
+import { removeEmpty } from '../../../util/slots'
 
 export default {
   name: 'AmberTabs',
@@ -27,47 +19,61 @@ export default {
     AmberTabsBar
   },
   props: {
-    currenName: String
+    activeName: String,
+    animated: {
+      type: Boolean,
+      default: true
+    },
+    tabBarStyle: {
+      type: Object,
+      defalut: () => {}
+    }
   },
   data() {
     return {
       defaultSolts: [],
-      currenNameKey: '',
-      currenNameIndex: 0
+      tabBarExtraContentSolts: [],
+      activeNameKey: '',
+      activeNameIndex: 0
     }
   },
   provide() {
     return {
-      tabGround: this.$data
+      tabGroundData: this.$data,
+      tabGroundProps: this.$props
     }
   },
   computed: {
-    names() {
-      return this.defaultSolts.map((solt) => getPropsData(solt, 'name'))
-    },
-    tabs() {
-      return this.defaultSolts.map((solt) => getPropsData(solt, 'tab'))
-    },
-    disableds() {
-      return this.defaultSolts.map((solt) => {
-        const disable = getPropsData(solt, 'disabled')
-        return disable || disable === ''
-      })
+    className() {
+      return {
+        'amber-tabs-content': true,
+        'amber-tabs-content-animated': this.animated
+      }
     },
     tabsContentStyle() {
       return {
-        marginLeft: `-${this.currenNameIndex * 100}%`
+        marginLeft: `-${this.activeNameIndex * 100}%`
       }
     }
   },
   created() {
-    this.defaultSolts = removeEmpty(this.$slots.default)
-    this.currenNameKey = this.currenName || this.names[0]
+    this.initSlots()
+  },
+  beforeUpdate() {
+    this.initSlots()
   },
   methods: {
+    initSlots() {
+      this.defaultSolts = removeEmpty(this.$slots.default)
+      this.tabBarExtraContentSolts = removeEmpty(this.$slots.tabBarExtraContent)
+    },
     tabBarClick(name, i) {
-      this.currenNameKey = name
-      this.currenNameIndex = i
+      this.activeNameKey = name
+      this.activeNameIndex = i
+      this.$emit('change', name)
+    },
+    closeClick(activeName, i) {
+      this.$emit('edit', activeName, i)
     }
   }
 }

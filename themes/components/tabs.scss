@@ -5,6 +5,7 @@
     margin: 0 0 16px;
     border-bottom: 1px solid #e8e8e8;
     outline: none;
+    justify-content: space-between;
     &-container {
       position: relative;
       box-sizing: border-box;
@@ -32,6 +33,15 @@
           color: rgba(0, 0, 0, 0.25);
           cursor: not-allowed;
         }
+        .amber-tab-close-x {
+          margin-right: -5px;
+          margin-left: 3px;
+          overflow: hidden;
+          color: rgba(0, 0, 0, 0.45);
+          vertical-align: middle;
+          transition: all 0.3s;
+          cursor: pointer;
+        }
       }
       .ant-tabs-ink-bar {
         position: absolute;
@@ -54,27 +64,20 @@
     display: flex;
     width: 100%;
     .amber-tab {
-      display: none;
+      display: block;
       width: 100%;
+      height: 0;
       flex-shrink: 0;
+      overflow: hidden;
       &-active {
-        display: block;
+        height: auto;
       }
     }
     &-animated {
       display: flex;
       flex-direction: row;
-      transition: margin-left .3s cubic-bezier(.645,.045,.355,1);
+      transition: margin-left 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
       will-change: margin-left;
-      .amber-tab {
-        display: block;
-        overflow: hidden;
-        height: 0;
-        &-active {
-          height: inherit;
-          width: 100%;
-        }
-      }
     }
   }
 }

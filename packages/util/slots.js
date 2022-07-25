@@ -10,10 +10,9 @@ function isTag(slots, tag) {
   )
 }
 
-function getPropsData(vnode, value) {
-  const propsData = vnode.componentOptions.propsData || {}
-  if (value) return propsData[value]
-  return propsData
+function getPropsData(vNodes) {
+  if (!vNodes) return []
+  return vNodes.map((v) => v.componentOptions.propsData || {})
 }
 
 function insetPropsData(vnode, props) {
@@ -22,4 +21,17 @@ function insetPropsData(vnode, props) {
   return vnode
 }
 
-export { removeEmpty, isTag, getPropsData, insetPropsData }
+const renderDom = {
+  name: 'RenderDom',
+  props: {
+    vNode: [Array, String, Object, Number]
+  },
+  render(h) {
+    if (typeof this.vNode === 'object') {
+      return this.vNode
+    }
+    return h('div', this.vNode)
+  }
+}
+
+export { removeEmpty, isTag, getPropsData, insetPropsData, renderDom }

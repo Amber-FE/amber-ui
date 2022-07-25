@@ -7,19 +7,58 @@
 ::: demo
 
 ```html
-<amber-tabs>
-  <amber-tab name="1" tab="tab1">
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem, esse distinctio! Distinctio
+<amber-tabs :activeName="activeName" @change="change" @edit="edit">
+  <amber-tab
+    v-for="pane in panes"
+    :key="pane.name"
+    :name="pane.name"
+    :tab="pane.tab"
+    :disabled="pane.disabled"
+    :closable="pane.closable"
+  >
+    {{ pane.content }}
   </amber-tab>
-  <amber-tab name="2" tab="tab2" disabled>
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem, esse distinctio! Distinctio
-    laborum ad perferendis possimus, corrupti corporis autem dolores quae quis, blanditiis, deleniti
-    repellendus soluta praesentium quibusdam repudiandae optio!
-  </amber-tab>
-  <amber-tab name="3" tab="tab3 ~~~">
-    Content of Tab 3
-  </amber-tab>
+  <amber-button slot="tabBarExtraContent" @click="add"> add tabs </amber-button>
 </amber-tabs>
+<script>
+  export default {
+    data() {
+      const panes = [
+        { tab: 'Tab 1', content: 'Content of Tab 1', name: '1', closable: true },
+        { tab: 'Tab 2', content: 'Content of Tab 2', name: '2', disabled: true },
+        { tab: 'Tab 3', content: 'Content of Tab 3', name: '3' }
+      ]
+      return {
+        activeName: panes[0].name,
+        panes,
+        newTabIndex: 0
+      }
+    },
+    methods: {
+      change(activeName) {
+        console.log(activeName)
+      },
+      edit(activeName) {
+        console.log(activeName)
+        const panes = this.panes.filter((pane) => pane.name !== activeName)
+        this.panes = panes
+        this.activeName = panes[0].name || null
+      },
+      add() {
+        const panes = this.panes
+        const activeName = `newTab${this.newTabIndex++}`
+        panes.push({
+          tab: 'New Tab',
+          content: 'Content of new Tab',
+          name: activeName,
+          closable: true
+        })
+        this.panes = panes
+        this.activeName = activeName
+      }
+    }
+  }
+</script>
 ```
 
 :::
