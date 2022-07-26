@@ -20,6 +20,10 @@ export default {
   },
   props: {
     activeName: String,
+    type: {
+      type: String,
+      default: 'line'
+    },
     animated: {
       type: Boolean,
       default: true

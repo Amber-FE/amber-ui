@@ -23,11 +23,9 @@
 <script>
   export default {
     data() {
-      const panes = [
-        { tab: 'Tab 1', content: 'Content of Tab 1', name: '1', closable: true },
-        { tab: 'Tab 2', content: 'Content of Tab 2', name: '2', disabled: true },
-        { tab: 'Tab 3', content: 'Content of Tab 3', name: '3' }
-      ]
+      const panes = Array(3)
+        .fill(0)
+        .map((v, i) => ({ tab: `Tab ${i}`, content: `Content of Tab ${i}`, name: `${i}` }))
       return {
         activeName: panes[0].name,
         panes,
