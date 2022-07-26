@@ -17,40 +17,34 @@
           <div ref="tabItemGround">
             <div
               v-for="(props, i) in tabProps"
-              :key="props.name"
-              class="amber-tab-item"
               ref="tabItem"
+              class="amber-tab-item"
+              :key="props.name"
               :class="{
-                'amber-tab-item-active': tabGroundData.activeNameKey === props.name,
+                'amber-tab-item': true,
+                [`amber-tab-item-${tabGroundProps.type}`]: true,
+                'amber-tab-item-active':
+                  tabGroundData.activeNameKey === props.name &&
+                  !(props.disabled || props.disabled === ''),
                 'amber-tab-item-disabled': props.disabled || props.disabled === ''
               }"
               :style="tabGroundProps.tabBarStyle"
               @click="handerClick(props.name, i)"
             >
-              {{ props.tab }}
+              <RenderDom :vNode="tabSlots[i]" :tab="props.tab" />
               <i
                 v-if="props.closable || props.closable === ''"
-                @click="closeClick(props, i)"
                 class="amber-tab-close-x"
+                @click="closeClick(props, i)"
               >
                 <amber-icon :size="'10'" :iconClass="'a-cuo3x1'" color="#ccc" />
               </i>
             </div>
           </div>
           <div
-            data-name="link"
-            :class="className"
-            :style="{
-              width: `${
-                tabItemStyle[tabGroundData.activeNameKey] &&
-                tabItemStyle[tabGroundData.activeNameKey]['width']
-              }px`,
-              transform: `translate3d(${
-                tabItemStyle[tabGroundData.activeNameKey] &&
-                tabItemStyle[tabGroundData.activeNameKey]['offsetLeft']
-              }px,
-            0px, 0px)`
-            }"
+            v-if="tabGroundProps.type === 'line'"
+            :class="linkClassName"
+            :style="linkStyle"
           ></div>
         </div>
       </div>
@@ -71,17 +65,28 @@
 </template>
 <script>
 import AmberIcon from '../../icon/index'
-import { getPropsData } from '../../../util/slots'
+import { getPropsData, removeEmpty } from '../../../util/slots'
 import { getBoxInfo } from '../../../util'
 
 export default {
   name: 'AmberTabsBar',
   components: {
-    AmberIcon
+    AmberIcon,
+    RenderDom: {
+      props: {
+        vNode: [Array, String, Object, Number],
+        tab: String
+      },
+      render(h) {
+        if (!this.vNode || this.vNode.length === 0) return h('span', this.tab)
+        return h('div', this.vNode)
+      }
+    }
   },
   props: {},
   data() {
     return {
+      tabSlots: [],
       tabItemStyle: {},
       tabItemGroundWidth: 0,
       tabItemSumWidth: 0,
@@ -90,10 +95,18 @@ export default {
     }
   },
   computed: {
-    className() {
+    linkClassName() {
       return {
         'ant-tabs-link-bar': true,
         'ant-tabs-link-bar-animated': this.tabGroundProps.animated
+      }
+    },
+    linkStyle() {
+      if (!this.tabItemStyle[this.tabGroundData.activeNameKey]) return {}
+      return {
+        width: `${this.tabItemStyle[this.tabGroundData.activeNameKey].width}px`,
+        transform: `translate3d(${this.tabItemStyle[this.tabGroundData.activeNameKey].offsetLeft}px,
+            0px, 0px)`
       }
     },
     tabProps() {
@@ -114,6 +127,7 @@ export default {
   },
   mounted() {
     this.setTabItemStyle()
+    this.setTabslots()
   },
   methods: {
     initActiveName() {
@@ -146,8 +160,17 @@ export default {
         }
       })
     },
+    setTabslots() {
+      this.tabSlots = this.tabGroundData.defaultSolts.map((vNode) => {
+        return (
+          vNode.componentInstance &&
+          vNode.componentInstance.$slots &&
+          removeEmpty(vNode.componentInstance.$slots.tab)
+        )
+      })
+    },
     handerClick(name, i) {
-      // if (this.tabProps[i].disabled || this.tabGroundData.activeNameKey === name) return
+      if (this.tabProps[i].disabled || this.tabProps[i].disabled === '') return
       this.setTabItemStyle()
       // 滚动状态 自动吸附
       if (this.isScroll) {

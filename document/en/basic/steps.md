@@ -1,4 +1,4 @@
-# Steps 
+# Steps
 
 :::tip
 Child elements of `<amber-steps>` can only be `<amber-step>`

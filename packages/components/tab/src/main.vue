@@ -19,6 +19,7 @@ export default {
       default: false
     }
   },
+  inject: ['tabGroundData', 'tabGroundProps'],
   computed: {
     classls() {
       return {
@@ -26,10 +27,6 @@ export default {
         'amber-tab-active': this.tabGroundData.activeNameKey === this.name
       }
     }
-  },
-  inject: ['tabGroundData', 'tabGroundProps'],
-  created() {
-    // console.log(this)
   }
 }
 </script>

@@ -1,8 +1,8 @@
 # Tabs 标签页
 
-### 示例
+### Example
 
-### 基本使用
+### basic use
 
 ::: demo
 
@@ -10,13 +10,13 @@
 <template>
   <div>
     <amber-tabs activeName="1" @change="callback">
-      <amber-tab name="1" tab="选项卡 1"> 选项卡窗格的内容 1 </amber-tab>
-      <amber-tab name="2" tab="选项卡 2">
+      <amber-tab name="1" tab="Tab 1"> Content of Tab Pane 1 </amber-tab>
+      <amber-tab name="2" tab="Tab 2">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quo perferendis qui
         perspiciatis, cumque vero tenetur corporis exercitationem sunt minus consequuntur non ipsam
         ea maxime, est recusandae numquam animi incidunt.
       </amber-tab>
-      <amber-tab name="3" tab="选项卡 3"> 选项卡窗格的内容 3 </amber-tab>
+      <amber-tab name="3" tab="Tab 3"> Content of Tab Pane 3 </amber-tab>
     </amber-tabs>
   </div>
 </template>
@@ -36,7 +36,7 @@
 
 :::
 
-### 不使用 tab 动画
+### Don't use tab animation
 
 ::: demo
 
@@ -44,13 +44,13 @@
 <template>
   <div>
     <amber-tabs activeName="1" @change="callback" :animated="false">
-      <amber-tab name="1" tab="选项卡 1"> 选项卡窗格的内容 1 </amber-tab>
-      <amber-tab name="2" tab="选项卡 2">
+      <amber-tab name="1" tab="Tab 1"> Content of Tab Pane 1 </amber-tab>
+      <amber-tab name="2" tab="Tab 2">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quo perferendis qui
         perspiciatis, cumque vero tenetur corporis exercitationem sunt minus consequuntur non ipsam
         ea maxime, est recusandae numquam animi incidunt.
       </amber-tab>
-      <amber-tab name="3" tab="选项卡 3"> 选项卡窗格的内容 3 </amber-tab>
+      <amber-tab name="3" tab="Tab 3"> Content of Tab Pane 3 </amber-tab>
     </amber-tabs>
   </div>
 </template>
@@ -70,7 +70,7 @@
 
 :::
 
-### 标签禁用
+### Tab disable
 
 ::: demo
 
@@ -78,9 +78,9 @@
 <template>
   <div>
     <amber-tabs activeName="1" @change="callback">
-      <amber-tab name="1" tab="选项卡 1"> 选项卡窗格的内容 1 </amber-tab>
-      <amber-tab name="2" tab="选项卡 2" disabled> 选项卡窗格的内容 2 </amber-tab>
-      <amber-tab name="3" tab="选项卡 3"> 选项卡窗格的内容 3 </amber-tab>
+      <amber-tab name="1" tab="Tab 1"> Content of Tab Pane 1 </amber-tab>
+      <amber-tab name="2" tab="Tab 2" disabled> Content of Tab Pane 2 </amber-tab>
+      <amber-tab name="3" tab="Tab 3"> Content of Tab Pane 3 </amber-tab>
     </amber-tabs>
   </div>
 </template>
@@ -100,7 +100,7 @@
 
 :::
 
-### 标签图标
+### tab icon
 
 ::: demo
 
@@ -108,15 +108,15 @@
 <template>
   <div>
     <amber-tabs activeName="1" @change="callback">
-      <amber-tab name="1" tab="选项卡 1">
+      <amber-tab name="1" tab="Tab 1">
         <span slot="tab">
           <amber-icon size="14px" :pointer="true" color="#5d82a6" icon-class="a-bianzu313x" />
-          选项卡 1
+          Tab 1
         </span>
-        选项卡 1
+        Tab 1
       </amber-tab>
-      <amber-tab name="2" tab="选项卡 2" disabled> 选项卡窗格的内容 2 </amber-tab>
-      <amber-tab name="3" tab="选项卡 3">
+      <amber-tab name="2" tab="Tab 2" disabled> Content of Tab Pane 2 </amber-tab>
+      <amber-tab name="3" tab="Tab 3">
         <span slot="tab">
           <amber-icon
             size="14px"
@@ -124,9 +124,9 @@
             color="#5d82a6"
             icon-class="a-jisutuikuanbeifen3x"
           />
-          选项卡 Pane 3
+          Tab Pane 3
         </span>
-        选项卡窗格的内容 3
+        Content of Tab Pane 3
       </amber-tab>
     </amber-tabs>
   </div>
@@ -147,7 +147,7 @@
 
 :::
 
-### 滑动标签，容纳更多标签
+### Swipe tabs to accommodate more tabs
 
 ::: demo
 
@@ -155,8 +155,8 @@
 <template>
   <div>
     <amber-tabs activeName="1" @change="callback">
-      <amber-tab v-for="i in 30" :key="i" :name="`${i}`" :tab="`选项卡 ${i}`">
-        选项卡窗格的内容 {{i}}
+      <amber-tab v-for="i in 30" :key="i" :name="`${i}`" :tab="`Tab ${i}`">
+        Content of Tab Pane {{i}}
       </amber-tab>
     </amber-tabs>
   </div>
@@ -177,7 +177,7 @@
 
 :::
 
-### 附加内容
+### Additional content
 
 ::: demo
 
@@ -185,10 +185,10 @@
 <template>
   <div>
     <amber-tabs activeName="1" @change="callback">
-      <amber-tab name="1" tab="选项卡 1"> 选项卡窗格的内容 1 </amber-tab>
-      <amber-tab name="2" tab="选项卡 2"> 选项卡窗格的内容 2 </amber-tab>
-      <amber-tab name="3" tab="选项卡 3"> 选项卡窗格的内容 3 </amber-tab>
-      <amber-button slot="tabBarExtraContent"> 附加内容 </amber-button>
+      <amber-tab name="1" tab="Tab 1"> Content of Tab Pane 1 </amber-tab>
+      <amber-tab name="2" tab="Tab 2"> Content of Tab Pane 2 </amber-tab>
+      <amber-tab name="3" tab="Tab 3"> Content of Tab Pane 3 </amber-tab>
+      <amber-button slot="tabBarExtraContent"> Additional content </amber-button>
     </amber-tabs>
   </div>
 </template>
@@ -208,7 +208,7 @@
 
 :::
 
-### 卡片式表签
+### card tab
 
 ::: demo
 
@@ -216,9 +216,9 @@
 <template>
   <div>
     <amber-tabs type="card" activeName="1" @change="callback">
-      <amber-tab name="1" tab="选项卡 1"> 选项卡窗格的内容 1 </amber-tab>
-      <amber-tab name="2" tab="选项卡 2"> 选项卡窗格的内容 2 </amber-tab>
-      <amber-tab name="3" tab="选项卡 3"> 选项卡窗格的内容 3 </amber-tab>
+      <amber-tab name="1" tab="Tab 1"> Content of Tab Pane 1 </amber-tab>
+      <amber-tab name="2" tab="Tab 2"> Content of Tab Pane 2 </amber-tab>
+      <amber-tab name="3" tab="Tab 3"> Content of Tab Pane 3 </amber-tab>
     </amber-tabs>
   </div>
 </template>
@@ -238,7 +238,7 @@
 
 :::
 
-### 动态标签
+### Dynamic tabs
 
 ::: demo
 
@@ -254,14 +254,14 @@
   >
     {{ pane.content }}
   </amber-tab>
-  <amber-button slot="tabBarExtraContent" @click="add"> 增加 选项卡 </amber-button>
+  <amber-button slot="tabBarExtraContent" @click="add"> 增加 Tab </amber-button>
 </amber-tabs>
 <script>
   export default {
     data() {
       const panes = Array(3)
         .fill(0)
-        .map((v, i) => ({ tab: `选项卡 ${i}`, content: `选项卡内容 ${i}`, name: `${i}` }))
+        .map((v, i) => ({ tab: `Tab ${i}`, content: `Tab内容 ${i}`, name: `${i}` }))
       return {
         activeName: panes[0].name,
         panes,
@@ -280,10 +280,10 @@
       },
       add() {
         const panes = this.panes
-        const activeName = `新选项卡 ${this.newTabIndex++}`
+        const activeName = `新Tab ${this.newTabIndex++}`
         panes.push({
-          tab: '新选项卡',
-          content: '新选项卡内容',
+          tab: '新Tab',
+          content: '新Tab内容',
           name: activeName,
           closable: true
         })
@@ -299,27 +299,27 @@
 
 ### API
 
-#### tabs 整体标签
+#### tabs
 
-| 参数        | 说明                                | 类型    | 默认值 | 版本 |
-| ----------- | ----------------------------------- | ------- | ------ | ---- |
-| activeName  | 当前激活 tab 面板的 key             | string  | -      |      |
-| type        | 指定当前 tab 的形式 可选 line、card | string  | line   |      |
-| animated    | 是否使用动画切换 Tabs               | boolean | true   |      |
-| tabBarStyle | tab bar 的样式对象                  | object  | -      |      |
+| parameter   | illustrate                                     | type    | Defaults | Version |
+| ----------- | ---------------------------------------------- | ------- | -------- | ------- |
+| activeName  | The key that currently activates the tab panel | string  | -        |         |
+| type        | Specifies the form of the current tab          | string  | line     |         |
+| animated    | Whether to use animation to switch Tabs        | boolean | true     |         |
+| tabBarStyle | style object for the tab bar                   | object  | -        |         |
 
-### event 事件
+### event
 
-| 参数   | 说明                 | 默认值                  | 版本 |
-| ------ | -------------------- | ----------------------- | ---- |
-| change | 切换面板的回调       | Function(activeName) {} |      |
-| edit   | 新增和删除页签的回调 | (activeName): void      |      |
+| parameter | illustrate                             | Defaults                | Defaults |
+| --------- | -------------------------------------- | ----------------------- | -------- |
+| change    | switch panel callback                  | Function(activeName) {} |          |
+| edit      | Callbacks for adding and deleting tabs | (activeName): void      |          |
 
-### tabs.tab 标签
+### tabs.tab
 
-| 参数     | 说明             | 类型    | 默认值 | 版本 |
-| -------- | ---------------- | ------- | ------ | ---- | --- |
-| name     | 对应 activeName  | string  | -      |      |
-| tab      | 选项卡头显示文字 | string  | slot   | -    |     |
-| disabled | 是否禁用 Tabs    | boolean | false  |      |
-| closable | tabs 是否可删除  | object  | false  |      |
+| parameter | illustrate                  | type    | Defaults | Version |
+| --------- | --------------------------- | ------- | -------- | ------- | --- |
+| name      | corresponding to activeName | string  | -        |         |
+| tab       | Tab header display text     | string  | slot     | -       |     |
+| disabled  | Whether to disable Tabs     | boolean | false    |         |
+| closable  | Whether tabs can be deleted | object  | false    |         |

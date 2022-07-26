@@ -21,7 +21,7 @@ function insetPropsData(vnode, props) {
   return vnode
 }
 
-const renderDom = {
+const RenderDom = {
   name: 'RenderDom',
   props: {
     vNode: [Array, String, Object, Number]
@@ -34,4 +34,4 @@ const renderDom = {
   }
 }
 
-export { removeEmpty, isTag, getPropsData, insetPropsData, renderDom }
+export { removeEmpty, isTag, getPropsData, insetPropsData, RenderDom }
