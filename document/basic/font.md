@@ -104,7 +104,6 @@
 }
 .font-zh {
   font-size: 34px;
-  font-family: PingFangSC-Regular, PingFang SC;
   flex: 2;
 }
 .font-en {

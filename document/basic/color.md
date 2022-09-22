@@ -153,7 +153,6 @@
   border: 1px solid #eee;
   margin-top: 20px;
   padding: 20px 35px 0px 35px;
-  font-family: PingFangSC-Regular, PingFang SC !important;
 }
 .color-container-item {
   font-size: 16px;
