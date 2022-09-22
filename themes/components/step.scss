@@ -22,7 +22,6 @@
         border-radius: 50%;
         background: #1b9dff;
         font-size: 14px;
-        font-family: PingFangSC-Medium, PingFang SC;
         font-weight: 500;
         color: #ffffff;
       }
@@ -48,7 +47,6 @@
       &-description {
         height: 18px;
         font-size: 12px;
-        font-family: PingFangSC-Regular, PingFang SC;
         font-weight: 400;
         color: #969799;
         line-height: 18px;
@@ -67,7 +65,6 @@
       }
       .amber-step-item-content {
         &-title {
-          font-family: PingFangSC-Regular, PingFang SC;
           color: #969799;
           font-weight: 400;
         }
@@ -86,7 +83,6 @@
       }
       .amber-step-item-content {
         &-title {
-          font-family: PingFangSC-Medium, PingFang SC;
           color: #323233;
           font-weight: 500;
         }
@@ -105,7 +101,6 @@
       }
       .amber-step-item-content {
         &-title {
-          font-family: PingFangSC-Medium, PingFang SC;
           color: #323233;
           font-weight: 500;
         }
@@ -128,7 +123,6 @@
       }
       .amber-step-item-content {
         &-title {
-          font-family: PingFangSC-Regular, PingFang SC;
           color: $button-disable-color;
           font-weight: 400;
         }
@@ -144,7 +138,6 @@
       }
       .amber-step-item-content {
         &-title {
-          font-family: PingFangSC-Medium, PingFang SC;
           color: #d40000;
           font-weight: 500;
         }
