@@ -9,6 +9,7 @@
       >
         <
       </div>
+
       <div class="amber-tabs-bar-content">
         <div
           class="amber-tabs-bar-scroll"
@@ -32,6 +33,9 @@
               @click="handerClick(props.name, i)"
             >
               <RenderDom :vNode="tabSlots[i]" :tab="props.tab" />
+
+              <!-- <、 :vNode="tabSlots[i]" :tab="props.tab" /> -->
+
               <i
                 v-if="props.closable || props.closable === ''"
                 class="amber-tab-close-x"
